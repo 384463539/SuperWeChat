@@ -258,6 +258,10 @@
     <init>();
 }
 
+-keep class com.hyphenate.chatuidemo.ui.GuideActivity {
+    <init>();
+}
+
 -keep public class * extends android.app.backup.BackupAgent {
     <init>();
 }

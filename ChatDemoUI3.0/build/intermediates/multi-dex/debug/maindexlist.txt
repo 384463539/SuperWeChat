@@ -6,6 +6,7 @@ com/bumptech/glide/GlideBuilder.class
 com/hyphenate/easeui/ui/EaseShowNormalFileActivity.class
 org/apache/http/cookie/Cookie.class
 android/support/v4/app/FragmentManagerState.class
+com/hyphenate/chatuidemo/ui/GuideActivity.class
 com/easemob/redpacketui/ui/a/ba.class
 com/hyphenate/easeui/R$dimen.class
 com/hyphenate/easeui/R$color.class
@@ -116,6 +117,7 @@ com/easemob/redpacketui/R$layout.class
 android/support/v4/media/session/MediaSessionCompat$OnActiveChangeListener.class
 android/support/v7/app/ActionBar$OnMenuVisibilityListener.class
 com/hyphenate/chatuidemo/runtimepermissions/PermissionsResultAction.class
+com/hyphenate/chatuidemo/ui/GuideActivity$1.class
 com/easemob/redpacketui/ui/activity/a.class
 com/hyphenate/chatuidemo/ui/ImageGridFragment.class
 com/easemob/redpacketui/recyclerview/widget/RecyclerView$ItemAnimator$AdapterChanges.class

@@ -3,19 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eff2f6"
-    android:orientation="vertical" >
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/em_welcom_logo" />
-    </RelativeLayout>
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,23 +11,23 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_weight="1.5"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="#fff" >
+            android:layout_marginTop="40dp"
+            android:background="#fff">
 
-            <ImageView
-                android:id="@+id/iv_username"
+            <TextView
+                android:id="@+id/login_tvname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="10dip"
-                android:src="@drawable/em_icon_account" />
+                android:text="用户名:"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/username"
@@ -47,11 +35,41 @@
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@id/iv_username"
+                android:layout_toRightOf="@id/login_tvname"
                 android:background="@null"
-                android:hint="@string/user_name"
+                android:hint="  您的账号"
                 android:paddingLeft="10dip"
                 android:singleLine="true"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff">
+
+            <TextView
+                android:id="@+id/login_tvnick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="用户名:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/usernick"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/iv_username"
+                android:layout_toRightOf="@id/login_tvnick"
+                android:background="@null"
+                android:hint="  您的账号"
+                android:paddingLeft="10dip"
+                android:singleLine="true"
+                android:textSize="14sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -60,16 +78,15 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
-            android:background="#fff" >
+            android:background="#fff">
 
-            <ImageView
-                android:id="@+id/iv_password"
+            <TextView
+                android:id="@+id/login_tvpass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="10dip"
-                android:src="@drawable/em_icon_pwd" />
+                android:text="密码:"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/password"
@@ -77,12 +94,13 @@
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@id/iv_password"
+                android:layout_toRightOf="@id/login_tvpass"
                 android:background="@null"
-                android:hint="@string/password"
+                android:hint="  请输入密码"
                 android:inputType="textPassword"
                 android:paddingLeft="10dip"
                 android:singleLine="true"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -91,29 +109,28 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
-            android:background="#fff" >
+            android:background="#fff">
 
-            <ImageView
-                android:id="@+id/iv_password2"
+            <TextView
+                android:id="@+id/login_tvpass2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="10dip"
-                android:src="@drawable/em_icon_pwd" />
+                android:text="密码:"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/confirm_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@id/iv_password2"
+                android:layout_toRightOf="@id/login_tvpass2"
                 android:background="@null"
-                android:hint="@string/confirmpassword"
+                android:hint="  你的密码"
                 android:inputType="textPassword"
                 android:paddingLeft="10dip"
                 android:singleLine="true"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
         </RelativeLayout>
 
         <LinearLayout
@@ -122,7 +139,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="20dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <Button
                 android:layout_width="match_parent"
@@ -134,7 +151,7 @@
                 android:onClick="register"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
-                android:text="@string/register"
+                android:text="注册"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>

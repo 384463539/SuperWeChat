@@ -62,6 +62,7 @@
 -keep class com.hyphenate.chat.EMChatService { <init>(); }
 -keep class com.hyphenate.chat.EMMonitorReceiver { <init>(); }
 -keep class com.baidu.location.f { <init>(); }
+-keep class com.hyphenate.chatuidemo.ui.GuideActivity { <init>(); }
 -keep public class * extends android.app.backup.BackupAgent {
     <init>();
 }
