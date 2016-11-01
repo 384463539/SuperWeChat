@@ -194,7 +194,7 @@ MERGED from [com.android.support:support-v4:23.3.0] D:\AndroidStudiowork\SuperWe
 	android:theme
 		ADDED from D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\AndroidManifest.xml:57:9-40
 	android:name
-		ADDED from D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\AndroidManifest.xml:53:9-59
+		ADDED from D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\AndroidManifest.xml:53:9-47
 activity#cn.ucai.superwechat.ui.MainActivity
 ADDED from D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\AndroidManifest.xml:60:9-65:55
 	android:screenOrientation
@@ -792,9 +792,9 @@ ADDED from D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\AndroidManifest.xml:43
 	android:name
 		ADDED from D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\AndroidManifest.xml:436:13-65
 meta-data#EASEMOB_APPKEY
-ADDED from D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\AndroidManifest.xml:440:9-442:55
+ADDED from D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\AndroidManifest.xml:440:9-442:51
 	android:value
-		ADDED from D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\AndroidManifest.xml:442:13-52
+		ADDED from D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\AndroidManifest.xml:442:13-48
 	android:name
 		ADDED from D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\AndroidManifest.xml:441:13-42
 service#com.hyphenate.chat.EMChatService
