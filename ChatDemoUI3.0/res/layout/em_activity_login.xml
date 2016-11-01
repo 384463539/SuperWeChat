@@ -5,6 +5,19 @@
     android:background="#eff2f6"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/em_mm_title_back" />
+    </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/rl_username"
         android:layout_width="match_parent"
@@ -87,7 +100,6 @@
     </RelativeLayout>
 
     <Button
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dip"
@@ -100,6 +112,24 @@
         android:text="登录"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="28dip"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录遇到问题?" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
