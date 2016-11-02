@@ -233,6 +233,7 @@ cn/ucai/superwechat/utils/L.class
 com/android/volley/toolbox/ImageRequest.class
 org/apache/http/impl/conn/tsccm/BasicPoolEntryRef.class
 org/apache/http/conn/params/ConnManagerPNames.class
+cn/ucai/superwechat/utils/MFGT.class
 org/apache/commons/logging/impl/SimpleLog.class
 android/support/v4/view/ViewCompat$JbMr1ViewCompatImpl.class
 org/apache/http/impl/conn/tsccm/AbstractConnPool.class
@@ -663,6 +664,7 @@ com/hyphenate/chat/EMMessageBody.class
 org/apache/http/client/UserTokenHandler.class
 android/support/v4/view/ScrollingView.class
 org/apache/http/cookie/CookieOrigin.class
+cn/ucai/superwechat/ui/LoginActivity$4.class
 org/apache/http/entity/StringEntity.class
 android/support/v7/app/ActionBar$Tab.class
 org/apache/http/HttpInetConnection.class

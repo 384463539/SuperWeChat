@@ -7,15 +7,15 @@ import butterknife.ButterKnife.Finder;
 public class RegisterActivity$$ViewInjector {
   public static void inject(Finder finder, final cn.ucai.superwechat.ui.RegisterActivity target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131624189, "field 'userNameEditText'");
+    view = finder.findRequiredView(source, 2131624190, "field 'userNameEditText'");
     target.userNameEditText = (android.widget.EditText) view;
-    view = finder.findRequiredView(source, 2131624221, "field 'userNickEditText'");
+    view = finder.findRequiredView(source, 2131624222, "field 'userNickEditText'");
     target.userNickEditText = (android.widget.EditText) view;
-    view = finder.findRequiredView(source, 2131624193, "field 'passwordEditText'");
+    view = finder.findRequiredView(source, 2131624194, "field 'passwordEditText'");
     target.passwordEditText = (android.widget.EditText) view;
-    view = finder.findRequiredView(source, 2131624224, "field 'confirmPwdEditText'");
+    view = finder.findRequiredView(source, 2131624225, "field 'confirmPwdEditText'");
     target.confirmPwdEditText = (android.widget.EditText) view;
-    view = finder.findRequiredView(source, 2131624218, "field 'registerLayoutBack' and method 'onClick'");
+    view = finder.findRequiredView(source, 2131624219, "field 'registerLayoutBack' and method 'onClick'");
     target.registerLayoutBack = (android.widget.LinearLayout) view;
     view.setOnClickListener(
       new android.view.View.OnClickListener() {
@@ -25,7 +25,7 @@ public class RegisterActivity$$ViewInjector {
           target.onClick(p0);
         }
       });
-    view = finder.findRequiredView(source, 2131624225, "field 'register' and method 'onClick'");
+    view = finder.findRequiredView(source, 2131624226, "field 'register' and method 'onClick'");
     target.register = (android.widget.Button) view;
     view.setOnClickListener(
       new android.view.View.OnClickListener() {
