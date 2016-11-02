@@ -29,8 +29,10 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.easeui.domain.UserBean;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
 
 import butterknife.ButterKnife;
@@ -41,6 +43,8 @@ import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.bean.Result;
 import cn.ucai.superwechat.db.SuperWeChatDBManager;
+import cn.ucai.superwechat.db.UserDao;
+import cn.ucai.superwechat.utils.L;
 import cn.ucai.superwechat.utils.MD5;
 import cn.ucai.superwechat.utils.MFGT;
 import cn.ucai.superwechat.utils.NetDao;
@@ -63,6 +67,7 @@ public class LoginActivity extends BaseActivity {
     private boolean progressShow;
     private boolean autoLogin = false;
     ProgressDialog pd = null;
+    UserBean userb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,10 +91,12 @@ public class LoginActivity extends BaseActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 passwordEditText.setText(null);
             }
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
+
             @Override
             public void afterTextChanged(Editable s) {
 
@@ -149,6 +156,9 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onSuccess(Result result) {
                 if (result.isRetMsg()) {
+                    String json = result.getRetData().toString();
+                    Gson gson = new Gson();
+                    userb = gson.fromJson(json, UserBean.class);
                     hxLogin();
                 }
             }
@@ -185,6 +195,11 @@ public class LoginActivity extends BaseActivity {
                 }
                 // get user's info (this should be get from App's server or 3rd party service)
                 DemoHelper.getInstance().getUserProfileManager().asyncGetCurrentUserInfo();
+                //添加user到内存
+                DemoHelper.getInstance().setUser(userb);
+                //添加user到数据库
+                UserDao ud = new UserDao(context);
+                ud.savaUser(userb);
 
                 Intent intent = new Intent(LoginActivity.this,
                         MainActivity.class);
