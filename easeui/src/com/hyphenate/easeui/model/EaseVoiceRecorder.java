@@ -55,7 +55,7 @@ public class EaseVoiceRecorder {
                                                     // size.
             // one easy way is to use temp file
             // file = File.createTempFile(PREFIX + userId, EXTENSION,
-            // User.getVoicePath());
+            // UserBean.getVoicePath());
             voiceFileName = getVoiceFileName(EMClient.getInstance().getCurrentUser());
             voiceFilePath = PathUtil.getInstance().getVoicePath() + "/" + voiceFileName;
             file = new File(voiceFilePath);

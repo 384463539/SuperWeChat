@@ -235,7 +235,7 @@ public final class EaseUI {
     }
     
     /**
-     * User profile provider
+     * UserBean profile provider
      * @author wei
      *
      */
