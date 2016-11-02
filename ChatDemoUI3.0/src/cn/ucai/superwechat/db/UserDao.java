@@ -51,9 +51,6 @@ public class UserDao {
 
     public UserDao(Context context) {
     }
-
-
-
     public boolean savaUser(UserBean user) {
         return SuperWeChatDBManager.getInstance().savaUser(user);
     }

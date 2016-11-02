@@ -151,6 +151,12 @@ public class LoginActivity extends BaseActivity {
         login2();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        pd.dismiss();
+    }
+
     public void login2() {
         NetDao.login1(context, currentUsername, currentPassword, new OkHttpUtils.OnCompleteListener<Result>() {
             @Override

@@ -11,6 +11,7 @@ import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMOptions;
 import com.hyphenate.easeui.domain.EaseEmojicon;
 import com.hyphenate.easeui.domain.EaseUser;
+import com.hyphenate.easeui.domain.UserBean;
 import com.hyphenate.easeui.model.EaseAtMessageHelper;
 import com.hyphenate.easeui.model.EaseNotifier;
 
@@ -239,6 +240,7 @@ public final class EaseUI {
      * @author wei
      *
      */
+    //取得本机数据库里的user，和环信里的用户
     public interface EaseUserProfileProvider {
         /**
          * return EaseUser for input username
@@ -246,6 +248,7 @@ public final class EaseUI {
          * @return
          */
         EaseUser getUser(String username);
+        UserBean getUserBean(String username);
     }
     
     /**

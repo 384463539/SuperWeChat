@@ -68,6 +68,8 @@ public class DemoHelper {
     /**
      * data sync listener
      */
+    Context context;
+
     public interface DataSyncListener {
         /**
          * sync complete
@@ -222,6 +224,13 @@ public class DemoHelper {
         return options;
     }
 
+
+    private UserBean getUserInfo2(String username) {
+        UserDao userDao = new UserDao(context);
+        UserBean user = userDao.getUser(username);
+        return user;
+    }
+
     protected void setEaseUIProviders() {
         // set profile provider if you want easeUI to handle avatar and nickname
         easeUI.setUserProfileProvider(new EaseUserProfileProvider() {
@@ -229,6 +238,11 @@ public class DemoHelper {
             @Override
             public EaseUser getUser(String username) {
                 return getUserInfo(username);
+            }
+
+            @Override
+            public UserBean getUserBean(String username) {
+                return getUserInfo2(username);
             }
         });
 
@@ -931,11 +945,6 @@ public class DemoHelper {
         return robotList;
     }
 
-    /**
-     * update user list to cache and database
-     *
-     * @param contactList
-     */
     public void updateContactList(List<EaseUser> contactInfoList) {
         for (EaseUser u : contactInfoList) {
             contactList.put(u.getUsername(), u);
