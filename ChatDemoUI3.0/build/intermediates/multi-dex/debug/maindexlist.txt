@@ -837,7 +837,6 @@ android/support/v4/view/ViewCompat$JbMr2ViewCompatImpl.class
 org/apache/http/impl/cookie/RFC2109Spec.class
 org/apache/http/params/HttpProtocolParamBean.class
 com/alipay/tscenter/biz/rpc/vkeydfp/AppListCmdService.class
-cn/ucai/superwechat/DemoHelper.class
 com/baidu/mapapi/search/route/TransitRouteLine.class
 org/apache/http/impl/io/AbstractMessageWriter.class
 butterknife/OnItemLongClick.class
@@ -1280,6 +1279,7 @@ org/apache/http/impl/conn/ProxySelectorRoutePlanner.class
 com/umeng/update/net/DownloadingService$c.class
 com/easemob/redpacketui/ui/activity/h.class
 com/easemob/redpacketui/ui/a/av.class
+cn/ucai/superwechat/SuPerWeChatHelper.class
 com/baidu/mapapi/map/MapStatus$Builder.class
 org/apache/http/impl/cookie/RFC2109DomainHandler.class
 org/apache/http/HttpConnection.class

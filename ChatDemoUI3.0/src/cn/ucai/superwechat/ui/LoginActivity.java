@@ -38,13 +38,12 @@ import com.hyphenate.easeui.utils.EaseCommonUtils;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-import cn.ucai.superwechat.DemoHelper;
+import cn.ucai.superwechat.SuPerWeChatHelper;
 import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.bean.Result;
 import cn.ucai.superwechat.db.SuperWeChatDBManager;
 import cn.ucai.superwechat.db.UserDao;
-import cn.ucai.superwechat.utils.L;
 import cn.ucai.superwechat.utils.MD5;
 import cn.ucai.superwechat.utils.MFGT;
 import cn.ucai.superwechat.utils.NetDao;
@@ -74,7 +73,7 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         // enter the main activity if already logged in
-        if (DemoHelper.getInstance().isLoggedIn()) {
+        if (SuPerWeChatHelper.getInstance().isLoggedIn()) {
             autoLogin = true;
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
             return;
@@ -102,8 +101,8 @@ public class LoginActivity extends BaseActivity {
 
             }
         });
-        if (DemoHelper.getInstance().getCurrentUsernName() != null) {
-            usernameEditText.setText(DemoHelper.getInstance().getCurrentUsernName());
+        if (SuPerWeChatHelper.getInstance().getCurrentUsernName() != null) {
+            usernameEditText.setText(SuPerWeChatHelper.getInstance().getCurrentUsernName());
         }
     }
 
@@ -147,7 +146,7 @@ public class LoginActivity extends BaseActivity {
         // close it before login to make sure DemoDB not overlap
         SuperWeChatDBManager.getInstance().closeDB();
         // reset current user name before login
-        DemoHelper.getInstance().setCurrentUserName(currentUsername);
+        SuPerWeChatHelper.getInstance().setCurrentUserName(currentUsername);
         login2();
     }
 
@@ -200,9 +199,9 @@ public class LoginActivity extends BaseActivity {
                     pd.dismiss();
                 }
                 // get user's info (this should be get from App's server or 3rd party service)
-                DemoHelper.getInstance().getUserProfileManager().asyncGetCurrentUserInfo();
+                SuPerWeChatHelper.getInstance().getUserProfileManager().asyncGetCurrentUserInfo();
                 //添加user到内存
-                DemoHelper.getInstance().setUser(userb);
+                SuPerWeChatHelper.getInstance().setUser(userb);
                 //添加user到数据库
                 UserDao ud = new UserDao(context);
                 ud.savaUser(userb);

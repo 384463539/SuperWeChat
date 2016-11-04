@@ -64,7 +64,7 @@ import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-public class DemoHelper {
+public class SuPerWeChatHelper {
     /**
      * data sync listener
      */
@@ -79,7 +79,7 @@ public class DemoHelper {
         void onSyncComplete(boolean success);
     }
 
-    protected static final String TAG = "DemoHelper";
+    protected static final String TAG = "SuPerWeChatHelper";
 
     private EaseUI easeUI;
 
@@ -94,7 +94,7 @@ public class DemoHelper {
 
     private UserProfileManager userProManager;
 
-    private static DemoHelper instance = null;
+    private static SuPerWeChatHelper instance = null;
 
     private SuPerWeChatModel demoModel = null;
 
@@ -135,8 +135,10 @@ public class DemoHelper {
     private boolean isGroupAndContactListenerRegisted;
 
     private UserBean user = null;
+    private Map<String, UserBean> appContactList;
 
-    private DemoHelper() {
+
+    private SuPerWeChatHelper() {
     }
 
     public UserBean getUser() {
@@ -150,9 +152,9 @@ public class DemoHelper {
         this.user = user;
     }
 
-    public synchronized static DemoHelper getInstance() {
+    public synchronized static SuPerWeChatHelper getInstance() {
         if (instance == null) {
-            instance = new DemoHelper();
+            instance = new SuPerWeChatHelper();
         }
         return instance;
     }
@@ -226,8 +228,14 @@ public class DemoHelper {
 
 
     private UserBean getUserInfo2(String username) {
-        UserDao userDao = new UserDao(context);
-        UserBean user = userDao.getUser(username);
+//        UserDao userDao = new UserDao(context);
+//        UserBean user = userDao.getUser(username);
+//        return user;
+        user = getAppcontactList().get(username);
+        if (user == null) {
+            user = new UserBean(username);
+            EaseCommonUtils.setAppUserInitialLetter(user);
+        }
         return user;
     }
 
@@ -643,7 +651,7 @@ public class DemoHelper {
 
         @Override
         public void onContactDeleted(String username) {
-            Map<String, EaseUser> localUsers = DemoHelper.getInstance().getContactList();
+            Map<String, EaseUser> localUsers = SuPerWeChatHelper.getInstance().getContactList();
             localUsers.remove(username);
             userDao.deleteContact(username);
             inviteMessgeDao.deleteMessage(username);
@@ -1267,4 +1275,47 @@ public class DemoHelper {
         easeUI.popActivity(activity);
     }
 
+
+    public void setAppcontactList(Map<String, UserBean> aContactList) {
+        if (aContactList == null) {
+            if (appContactList != null) {
+                appContactList.clear();
+            }
+            return;
+        }
+        appContactList = aContactList;
+    }
+
+    /**
+     * save single contact
+     */
+    public void saveAppcontact(UserBean user) {
+        appContactList.put(user.getMUserName(), user);
+        demoModel.saveAppcontact(user);
+    }
+
+    /**
+     * get contact list
+     *
+     * @return
+     */
+    public Map<String, UserBean> getAppcontactList() {
+        if (isLoggedIn() && appContactList == null) {
+            appContactList = demoModel.getAppContactList();
+        }
+        // return a empty non-null object to avoid app crash
+        if (appContactList == null) {
+            return new Hashtable<String, UserBean>();
+        }
+        return appContactList;
+    }
+
+    public void updateAppcontactList(List<UserBean> contactInfoList) {
+        for (UserBean u : contactInfoList) {
+            appContactList.put(u.getMUserName(), u);
+        }
+        ArrayList<UserBean> mList = new ArrayList<UserBean>();
+        mList.addAll(appContactList.values());
+        demoModel.saveAppContactList(mList);
+    }
 }

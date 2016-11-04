@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.domain.UserBean;
 
-import cn.ucai.superwechat.DemoHelper;
+import cn.ucai.superwechat.SuPerWeChatHelper;
 import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.db.UserDao;
 
@@ -41,7 +41,7 @@ public class SplashActivity extends BaseActivity {
 
         new Thread(new Runnable() {
             public void run() {
-                if (DemoHelper.getInstance().isLoggedIn()) {
+                if (SuPerWeChatHelper.getInstance().isLoggedIn()) {
                     // auto login mode, make sure all group and conversation is loaed before enter the main screen
                     long start = System.currentTimeMillis();
                     EMClient.getInstance().groupManager().loadAllGroups();
@@ -50,7 +50,7 @@ public class SplashActivity extends BaseActivity {
 
                     UserDao userDao = new UserDao(context);
                     UserBean user = userDao.getUser(EMClient.getInstance().getCurrentUser());
-                    DemoHelper.getInstance().setUser(user);
+                    SuPerWeChatHelper.getInstance().setUser(user);
 
                     //wait
                     if (sleepTime - costTime > 0) {

@@ -30,7 +30,7 @@ import com.hyphenate.exceptions.HyphenateException;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-import cn.ucai.superwechat.DemoHelper;
+import cn.ucai.superwechat.SuPerWeChatHelper;
 import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.bean.Result;
 import cn.ucai.superwechat.utils.L;
@@ -143,7 +143,7 @@ public class RegisterActivity extends BaseActivity {
                                 if (!RegisterActivity.this.isFinishing())
                                 pd.dismiss();
                                 // save current user
-                                DemoHelper.getInstance().setCurrentUserName(username);
+                                SuPerWeChatHelper.getInstance().setCurrentUserName(username);
                                 Toast.makeText(getApplicationContext(), getResources().getString(R.string.Registered_successfully), Toast.LENGTH_SHORT).show();
                                 finish();
                             }

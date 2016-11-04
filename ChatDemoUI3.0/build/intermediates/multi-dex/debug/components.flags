@@ -1,5 +1,5 @@
--injars 'D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\build\intermediates\transforms\jarMerging\debug\jars\1\1f\combined.jar'
--outjars 'D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\build\intermediates\multi-dex\debug\componentClasses.jar'
+-injars 'D:\Andriodwork\SuperWeChat\SuperWeChat\ChatDemoUI3.0\build\intermediates\transforms\jarMerging\debug\jars\1\1f\combined.jar'
+-outjars 'D:\Andriodwork\SuperWeChat\SuperWeChat\ChatDemoUI3.0\build\intermediates\multi-dex\debug\componentClasses.jar'
 
 -libraryjars 'D:\sdk\build-tools\23.0.3\lib\shrinkedAndroid.jar'
 
@@ -10,7 +10,7 @@
 -dontpreverify
 -dontnote **,com.android.tools.fd.**,android.support.multidex.MultiDexExtractor
 -dontwarn **
--printconfiguration 'D:\AndroidStudiowork\SuperWeChat\ChatDemoUI3.0\build\intermediates\multi-dex\debug\components.flags'
+-printconfiguration 'D:\Andriodwork\SuperWeChat\SuperWeChat\ChatDemoUI3.0\build\intermediates\multi-dex\debug\components.flags'
 
 
 -keep class cn.ucai.superwechat.SuperWeChatApplication {
