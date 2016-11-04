@@ -1304,7 +1304,7 @@ public class SuPerWeChatHelper {
      * @return
      */
     public Map<String, UserBean> getAppcontactList() {
-        if (isLoggedIn() && appContactList == null) {
+        if (isLoggedIn() && (appContactList == null||appContactList.size()==0)){
             L.i("为空");
             appContactList = demoModel.getAppContactList();
         }
@@ -1312,10 +1312,10 @@ public class SuPerWeChatHelper {
             L.i("为空赋空");
             return new Hashtable<String, UserBean>();
         }
-        if (isLoggedIn() && appContactList.size()==0) {
-            L.i("为空33");
-            appContactList = demoModel.getAppContactList();
-        }
+//        if (isLoggedIn() && appContactList.size()==0) {
+//            L.i("为空33");
+//            appContactList = demoModel.getAppContactList();
+//        }
         return appContactList;
     }
 
