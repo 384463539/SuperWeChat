@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center_horizontal"
@@ -21,8 +20,7 @@
                 style="@style/list_txt_Style"
                 android:layout_marginTop="20dp"
                 android:drawableLeft="@drawable/v2"
-                 />
-            <!--android:text="@string/discover_txt_pengyouquan"-->
+                android:text="@string/discover_txt_pengyouquan" />
 
             <View
                 android:layout_width="fill_parent"
@@ -35,8 +33,8 @@
                 style="@style/list_txt_Style"
                 android:layout_marginTop="20dp"
                 android:drawableLeft="@drawable/icon_de_saoyisao"
-                 />
-            <!--android:text="@string/discover_txt_saoyisao"-->
+                android:text="@string/discover_txt_saoyisao" />
+
 
             <View
                 android:layout_width="fill_parent"
@@ -47,8 +45,8 @@
                 android:id="@+id/txt_yaoyiyao"
                 style="@style/list_txt_Style"
                 android:drawableLeft="@drawable/icon_de_yao"
-                />
-            <!--android:text="@string/discover_txt_yaoyiyao"-->
+                android:text="@string/discover_txt_yaoyiyao" />
+
 
             <View
                 android:layout_width="fill_parent"
@@ -60,8 +58,8 @@
                 style="@style/list_txt_Style"
                 android:layout_marginTop="20dp"
                 android:drawableLeft="@drawable/icon_de_nearby"
-                 />
-            <!--android:text="@string/discover_txt_nearby"-->
+                android:text="@string/discover_txt_nearby" />
+
 
             <View
                 android:layout_width="fill_parent"
@@ -72,8 +70,8 @@
                 android:id="@+id/txt_piaoliuping"
                 style="@style/list_txt_Style"
                 android:drawableLeft="@drawable/icon_de_ping"
-                 />
-            <!--android:text="@string/discover_txt_piaoliuping"-->
+                android:text="@string/discover_txt_piaoliuping" />
+
 
             <View
                 android:layout_width="fill_parent"
@@ -86,8 +84,7 @@
                 style="@style/list_txt_Style"
                 android:layout_marginTop="20dp"
                 android:drawableLeft="@drawable/icon_de_shop"
-                 />
-            <!--android:text="@string/discover_txt_shop"-->
+                android:text="@string/discover_txt_shop" />
 
             <View
                 android:layout_width="fill_parent"
@@ -98,8 +95,8 @@
                 android:id="@+id/txt_game"
                 style="@style/list_txt_Style"
                 android:drawableLeft="@drawable/icon_de_game"
-                 />
-            <!--android:text="@string/discover_txt_game"-->
+                android:text="@string/discover_txt_game" />
+
 
             <View
                 android:layout_width="fill_parent"
