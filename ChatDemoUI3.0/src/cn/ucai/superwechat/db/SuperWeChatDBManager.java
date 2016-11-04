@@ -10,6 +10,7 @@ import cn.ucai.superwechat.SuperWeChatApplication;
 import cn.ucai.superwechat.domain.InviteMessage;
 import cn.ucai.superwechat.domain.InviteMessage.InviteMesageStatus;
 import cn.ucai.superwechat.domain.RobotUser;
+import cn.ucai.superwechat.utils.L;
 
 import com.hyphenate.easeui.domain.EaseUser;
 import com.hyphenate.easeui.domain.UserBean;
@@ -435,7 +436,7 @@ public class SuperWeChatDBManager {
     }
 
 
-    public void saveAppContact(UserBean userAvatar) {
+    public synchronized void saveAppContact(UserBean userAvatar) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(UserDao.USER_COLUMN_NAME, userAvatar.getMUserName());
@@ -457,7 +458,7 @@ public class SuperWeChatDBManager {
 
     }
 
-    public Map<String, UserBean> getAppContactList() {
+    public synchronized Map<String, UserBean> getAppContactList() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Map<String, UserBean> users = new Hashtable<String, UserBean>();
         if (db.isOpen()) {
@@ -480,13 +481,14 @@ public class SuperWeChatDBManager {
                 userAvatar.setMUserNick(nick);
                 EaseCommonUtils.setAppUserInitialLetter(userAvatar);
                 users.put(name, userAvatar);
+
             }
             query.close();
         }
         return users;
     }
 
-    public void saveAppContactList(ArrayList<UserBean> mList) {
+    public synchronized void saveAppContactList(ArrayList<UserBean> mList) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         if (db.isOpen()) {
             db.delete(UserDao.USER_TABLE_NAME, null, null);

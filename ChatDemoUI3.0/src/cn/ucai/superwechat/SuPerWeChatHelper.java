@@ -39,6 +39,7 @@ import cn.ucai.superwechat.ui.ChatActivity;
 import cn.ucai.superwechat.ui.MainActivity;
 import cn.ucai.superwechat.ui.VideoCallActivity;
 import cn.ucai.superwechat.ui.VoiceCallActivity;
+import cn.ucai.superwechat.utils.L;
 import cn.ucai.superwechat.utils.PreferenceManager;
 
 import com.hyphenate.easeui.controller.EaseUI;
@@ -136,7 +137,7 @@ public class SuPerWeChatHelper {
 
     private UserBean user = null;
     private Map<String, UserBean> appContactList;
-
+    static int a = 0;
 
     private SuPerWeChatHelper() {
     }
@@ -233,9 +234,11 @@ public class SuPerWeChatHelper {
 //        return user;
         user = getAppcontactList().get(username);
         if (user == null) {
+            L.i("kong");
             user = new UserBean(username);
             EaseCommonUtils.setAppUserInitialLetter(user);
         }
+        L.i("helper12+" + user.toString());
         return user;
     }
 
@@ -701,7 +704,7 @@ public class SuPerWeChatHelper {
         @Override
         public void onContactRefused(String username) {
             // your request was refused
-            Log.d(username, username + " refused to your request");
+            Log.d(username, username + " refuLsed to your request");
         }
     }
 
@@ -883,7 +886,7 @@ public class SuPerWeChatHelper {
     /**
      * update contact list
      *
-     * @param contactList
+     * @param aContactList
      */
     public void setContactList(Map<String, EaseUser> aContactList) {
         if (aContactList == null) {
@@ -1262,6 +1265,7 @@ public class SuPerWeChatHelper {
         isGroupAndContactListenerRegisted = false;
 
         setContactList(null);
+        setAppcontactList(null);
         setRobotList(null);
         getUserProfileManager().reset();
         SuperWeChatDBManager.getInstance().closeDB();
@@ -1301,14 +1305,20 @@ public class SuPerWeChatHelper {
      */
     public Map<String, UserBean> getAppcontactList() {
         if (isLoggedIn() && appContactList == null) {
+            L.i("为空");
             appContactList = demoModel.getAppContactList();
         }
-        // return a empty non-null object to avoid app crash
         if (appContactList == null) {
+            L.i("为空赋空");
             return new Hashtable<String, UserBean>();
+        }
+        if (isLoggedIn() && appContactList.size()==0) {
+            L.i("为空33");
+            appContactList = demoModel.getAppContactList();
         }
         return appContactList;
     }
+
 
     public void updateAppcontactList(List<UserBean> contactInfoList) {
         for (UserBean u : contactInfoList) {
