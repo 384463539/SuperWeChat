@@ -27,12 +27,23 @@ public class NetDao {
                 .targetClass(Result.class)
                 .execute(listtener);
     }
+
     //登录
     public static void login1(Context context, String name, String password, OkHttpUtils.OnCompleteListener<Result> listtener) {
         OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_LOGIN)
                 .addParam(I.User.USER_NAME, name)
                 .addParam(I.User.PASSWORD, password)
+                .targetClass(Result.class)
+                .execute(listtener);
+    }
+
+    //更改昵称
+    public static void updatNick(Context context, String name, String nick, OkHttpUtils.OnCompleteListener<Result> listtener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_UPDATE_USER_NICK)
+                .addParam(I.User.USER_NAME, name)
+                .addParam(I.User.NICK, nick)
                 .targetClass(Result.class)
                 .execute(listtener);
     }

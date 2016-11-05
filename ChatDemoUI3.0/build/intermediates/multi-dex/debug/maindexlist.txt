@@ -1255,6 +1255,7 @@ com/parse/ParsePlugins.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable.class
 cn/ucai/superwechat/ui/CallActivity$CallingState.class
 com/hyphenate/easeui/ui/EaseShowBigImageActivity.class
+com/hyphenate/easeui/domain/UserBean.class
 cn/ucai/superwechat/ui/PublicChatRoomsActivity$4.class
 com/easemob/redpacketui/recyclerview/widget/RecyclerView$2.class
 android/support/v7/app/ActionBar$LayoutParams.class
@@ -1283,6 +1284,7 @@ cn/ucai/superwechat/ui/GuideActivity.class
 cn/ucai/superwechat/ui/SplashActivity$1.class
 android/support/annotation/UiThread.class
 com/umeng/update/net/a$a.class
+cn/ucai/superwechat/ui/UserProfileActivity$6.class
 org/apache/http/auth/params/AuthParams.class
 com/baidu/mapapi/BMapManager.class
 org/apache/http/impl/cookie/BasicSecureHandler.class

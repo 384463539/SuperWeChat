@@ -54,8 +54,13 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.inject(this, view);
-        initView();
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initView();
     }
 
     private void initView() {
