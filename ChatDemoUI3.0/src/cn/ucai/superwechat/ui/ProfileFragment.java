@@ -4,6 +4,7 @@ package cn.ucai.superwechat.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,7 +64,8 @@ public class ProfileFragment extends Fragment {
         initView();
     }
 
-    private void initView() {
+    public void initView() {
+        Log.e("superwechat","hshhs");
         String name = EMClient.getInstance().getCurrentUser();
         EaseUserUtils.setUserAvatar2(getActivity(), name, profileIvUserAvatar);
         EaseUserUtils.setUserNick2(name, profileTvNick);

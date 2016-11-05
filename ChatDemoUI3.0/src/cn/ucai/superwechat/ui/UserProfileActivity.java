@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
@@ -26,13 +27,20 @@ import com.hyphenate.EMValueCallBack;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.domain.EaseUser;
 import com.hyphenate.easeui.domain.UserBean;
+import com.hyphenate.easeui.utils.EaseImageUtils;
 import com.hyphenate.easeui.utils.EaseUserUtils;
 
+import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import cn.ucai.superwechat.I;
 import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.SuPerWeChatHelper;
 import cn.ucai.superwechat.bean.Result;
@@ -110,7 +118,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
             if (username.equals(EMClient.getInstance().getCurrentUser())) {
                 tvUsername.setText(EMClient.getInstance().getCurrentUser());
                 EaseUserUtils.setUserNick2(username, tvNickName);
-                EaseUserUtils.setUserAvatar(this, username, headAvatar);
+                EaseUserUtils.setUserAvatar2(this, username, headAvatar);
             } else {
                 tvUsername.setText(username);
                 EaseUserUtils.setUserNick2(username, tvNickName);
@@ -179,7 +187,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
         builder.setTitle(R.string.dl_title_upload_photo);
         builder.setItems(new String[]{getString(R.string.dl_msg_take_photo), getString(R.string.dl_msg_local_upload)},
                 new DialogInterface.OnClickListener() {
-
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                         switch (which) {
@@ -234,6 +241,50 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
         }).start();
     }
 
+    public File savaFIle(Intent data) {
+        Bundle bundle = data.getExtras();
+        if (bundle != null) {
+            Bitmap bitmap = bundle.getParcelable("data");
+            String imagePath = EaseImageUtils.getImagePath(user.getMUserName()+ I.AVATAR_SUFFIX_PNG);
+            File file = new File(imagePath);
+            try {
+                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(file));
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, bufferedOutputStream);
+                bufferedOutputStream.flush();
+                bufferedOutputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return file;
+        }
+        return null;
+    }
+
+    private void updataUserAvatar(final Intent data) {
+        dialog = ProgressDialog.show(this, getString(R.string.dl_update_photo), getString(R.string.dl_waiting));
+        dialog.show();
+        File file = savaFIle(data);
+        NetDao.updatAvatar(this, user.getMUserName(), file, new OkHttpUtils.OnCompleteListener<Result>() {
+            @Override
+            public void onSuccess(Result result) {
+                Log.e("superwechat",result.toString());
+                if (result != null && result.isRetMsg()) {
+                    setPicToView(data);
+                } else {
+                    Toast.makeText(UserProfileActivity.this, "头像上传失败1", Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            }
+
+            @Override
+            public void onError(String error) {
+                Toast.makeText(UserProfileActivity.this, "头像上传失败", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -245,7 +296,8 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
                 break;
             case REQUESTCODE_CUTTING:
                 if (data != null) {
-                    setPicToView(data);
+                    updataUserAvatar(data);
+//                    setPicToView(data);
                 }
                 break;
             default:
@@ -284,9 +336,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
     }
 
     private void uploadUserAvatar(final byte[] data) {
-        dialog = ProgressDialog.show(this, getString(R.string.dl_update_photo), getString(R.string.dl_waiting));
         new Thread(new Runnable() {
-
             @Override
             public void run() {
                 final String avatarUrl = SuPerWeChatHelper.getInstance().getUserProfileManager().uploadUserAvatar(data);
@@ -307,8 +357,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 
             }
         }).start();
-
-        dialog.show();
     }
 
 

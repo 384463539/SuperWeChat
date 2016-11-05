@@ -92,7 +92,7 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
     // user account was removed
     private boolean isCurrentAccountRemoved = false;
     MainTabAdpter adpter;
-
+    ProfileFragment profileFragment;
 
     /**
      * check if current user account was remove
@@ -151,9 +151,7 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 //				.commit();
 
         //register broadcast receiver to receive the change of group from SuPerWeChatHelper
-
         registerBroadcastReceiver();
-
         EMClient.getInstance().contactManager().setContactListener(new MyContactListener());
         //debug purpose only
         registerInternalDebugReceiver();
@@ -186,14 +184,14 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 //		mTabs[2] = (Button) findViewById(R.id.btn_setting);
 //		// select first tab
 //		mTabs[0].setSelected(true);
-
+        profileFragment = new ProfileFragment();
         adpter = new MainTabAdpter(getSupportFragmentManager());
         mainViewpager.setAdapter(adpter);
         mainViewpager.setOffscreenPageLimit(4);
         adpter.addFragment(new ConversationListFragment(), getString(R.string.app_name));
         adpter.addFragment(new ContactListFragment(), getString(R.string.contacts));
         adpter.addFragment(new DiscoverFragment(), getString(R.string.discover));
-        adpter.addFragment(new ProfileFragment(), getString(R.string.me));
+        adpter.addFragment(profileFragment, getString(R.string.me));
         adpter.notifyDataSetChanged();
         mainHost.setChecked(0);
         mainHost.setOnCheckedChangeListener(this);
@@ -342,6 +340,9 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 
     @Override
     public void onCheckedChange(int checkedPosition, boolean byUser) {
+        if (checkedPosition == 3) {
+            profileFragment.initView();
+        }
         mainViewpager.setCurrentItem(checkedPosition, false);
     }
 
@@ -351,6 +352,9 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 
     @Override
     public void onPageSelected(int position) {
+        if (position == 3) {
+            profileFragment.initView();
+        }
         mainHost.setChecked(position);
     }
 
@@ -475,12 +479,10 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
     @Override
     protected void onResume() {
         super.onResume();
-
         if (!isConflict && !isCurrentAccountRemoved) {
             updateUnreadLabel();
             updateUnreadAddressLable();
         }
-
         // unregister this event listener when this activity enters the
         // background
         SuPerWeChatHelper sdkHelper = SuPerWeChatHelper.getInstance();
