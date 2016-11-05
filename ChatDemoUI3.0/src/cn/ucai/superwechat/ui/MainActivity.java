@@ -194,7 +194,8 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
         adpter.addFragment(new ConversationListFragment(), getString(R.string.app_name));
         adpter.addFragment(new ContactListFragment(), getString(R.string.contacts));
         adpter.addFragment(new DiscoverFragment(), getString(R.string.discover));
-        adpter.addFragment(new SettingsFragment(), getString(R.string.me));
+//        adpter.addFragment(new SettingsFragment(), getString(R.string.me));
+        adpter.addFragment(new ProfileFragment(), getString(R.string.me));
         adpter.notifyDataSetChanged();
         mainHost.setChecked(0);
         mainHost.setOnCheckedChangeListener(this);
@@ -349,10 +350,12 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
     }
+
     @Override
     public void onPageSelected(int position) {
         mainHost.setChecked(position);
     }
+
     @Override
     public void onPageScrollStateChanged(int state) {
     }

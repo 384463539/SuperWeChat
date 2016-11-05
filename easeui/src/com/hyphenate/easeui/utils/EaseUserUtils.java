@@ -57,6 +57,7 @@ public class EaseUserUtils {
             Glide.with(context).load(R.drawable.ease_default_avatar).into(imageView);
         }
     }
+
     public static void setUserAvatar2(Context context, String username, ImageView imageView) {
         UserBean user = getUserInfo2(username);
         if (user != null && user.getAvatar() != null) {
@@ -97,4 +98,7 @@ public class EaseUserUtils {
         }
     }
 
+    public static void setUserName(String ss, TextView profileTvUsername) {
+        profileTvUsername.setText("微信号:" + ss);
+    }
 }
