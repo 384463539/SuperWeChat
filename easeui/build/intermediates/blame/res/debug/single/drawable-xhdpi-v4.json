@@ -44,12 +44,12 @@
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ease_chat_press_speak_btn_normal.9.png",
-        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\drawable-xhdpi\\ease_chat_press_speak_btn_normal.9.png"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ease_chat_image_normal.png",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\drawable-xhdpi\\ease_chat_image_normal.png"
+    },
+    {
+        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ease_chat_press_speak_btn_normal.9.png",
+        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\drawable-xhdpi\\ease_chat_press_speak_btn_normal.9.png"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
@@ -64,16 +64,16 @@
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\drawable-xhdpi\\ease_chatting_biaoqing_btn_normal.png"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ease_group_icon.png",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\res\\drawable-xhdpi\\ease_group_icon.png"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png",
         "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ease_group_icon.png",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\res\\drawable-xhdpi\\ease_group_icon.png"
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ease_chat_item_file.png",

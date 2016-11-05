@@ -16,12 +16,12 @@
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\drawable-hdpi-v4\\ease_record_animate_07.png"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_app_panel_video_icon.9.png",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\drawable-hdpi-v4\\ease_app_panel_video_icon.9.png"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_app_panel_video_icon.9.png",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\drawable-hdpi-v4\\ease_app_panel_video_icon.9.png"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ee_7.png",
@@ -124,12 +124,12 @@
         "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\drawable-hdpi-v4\\ease_slidetab_bg_press.9.png"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_chatting_biaoqing_btn_normal.png",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\drawable-hdpi-v4\\ease_chatting_biaoqing_btn_normal.png"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_appitem_del_btn_pressed.png",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\drawable-hdpi-v4\\ease_appitem_del_btn_pressed.png"
+    },
+    {
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_chatting_biaoqing_btn_normal.png",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\drawable-hdpi-v4\\ease_chatting_biaoqing_btn_normal.png"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ee_9.png",

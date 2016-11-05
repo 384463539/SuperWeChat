@@ -76,12 +76,12 @@
         "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\res\\layout\\rp_fragment_complete_card_info.xml"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\layout\\rp_activity_red_packet_detail.xml",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\res\\layout\\rp_activity_red_packet_detail.xml"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_title_item.xml",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\layout\\rp_activity_red_packet_detail.xml",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\res\\layout\\rp_activity_red_packet_detail.xml"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\layout\\rp_activity_record.xml",
@@ -96,12 +96,12 @@
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\layout\\ease_widget_chat_primary_menu.xml"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_radio.xml",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_list_menu_item_radio.xml"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_singlechoice_material.xml",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_radio.xml",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_item_material.xml",

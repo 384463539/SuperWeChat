@@ -80,12 +80,12 @@
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\rp_divider.xml",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\res\\layout\\rp_divider.xml"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\rp_divider.xml",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\res\\layout\\rp_divider.xml"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\rp_choose_verify_popup_layout.xml",
@@ -128,12 +128,12 @@
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_dialog_title_material.xml"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\rp_popup_layout.xml",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\res\\layout\\rp_popup_layout.xml"
+    },
+    {
+        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_chat_history.xml",
@@ -156,12 +156,12 @@
         "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\layout\\ease_search_bar.xml"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_message.xml",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\layout\\ease_row_sent_message.xml"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\rp_fragment_group_chat_packet.xml",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\res\\layout\\rp_fragment_group_chat_packet.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_message.xml",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\layout\\ease_row_sent_message.xml"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\layout\\rp_hint_message_dialog.xml",

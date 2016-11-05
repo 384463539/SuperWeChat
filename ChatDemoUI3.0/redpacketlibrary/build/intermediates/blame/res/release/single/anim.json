@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\anim\\rp_fade_out.xml",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\res\\anim\\rp_fade_out.xml"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\anim\\rp_scale_out.xml",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\res\\anim\\rp_scale_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\anim\\rp_fade_out.xml",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\res\\anim\\rp_fade_out.xml"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\anim\\push_top_in2.xml",

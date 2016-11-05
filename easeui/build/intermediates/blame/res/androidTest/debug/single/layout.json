@@ -44,12 +44,12 @@
         "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_alert_dialog_material.xml",
         "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\select_dialog_item_material.xml"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\notification_template_big_media_narrow.xml",

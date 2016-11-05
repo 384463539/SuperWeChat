@@ -3214,7 +3214,6 @@ containing a value of this type.
         public static final int ll_black_list=0x7f0e015d;
         public static final int ll_bottom_container=0x7f0e0139;
         public static final int ll_btns=0x7f0e012d;
-        public static final int ll_change=0x7f0e014f;
         public static final int ll_coming_call=0x7f0e013e;
         public static final int ll_diagnose=0x7f0e015e;
         public static final int ll_face_container=0x7f0e0081;
@@ -3370,6 +3369,7 @@ containing a value of this type.
         public static final int seekbar_y_detal=0x7f0e0135;
         public static final int select_dialog_listview=0x7f0e006b;
         public static final int selected_view=0x7f0e001a;
+        public static final int set_iv_back=0x7f0e014f;
         public static final int shortcut=0x7f0e0057;
         public static final int showCustom=0x7f0e0024;
         public static final int showHome=0x7f0e0025;

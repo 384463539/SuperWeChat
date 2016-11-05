@@ -108,6 +108,7 @@ com/huawei/android/pushagent/b/b/c.class
 com/hyphenate/chat/EMMonitorReceiver.class
 cn/ucai/superwechat/ui/VoiceCallActivity$1.class
 org/apache/http/cookie/ClientCookie.class
+cn/ucai/superwechat/utils/ExitAppUtils.class
 com/easemob/redpacketui/ui/activity/i.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable$ArrowDirection.class
 org/apache/http/impl/io/ChunkedInputStream.class

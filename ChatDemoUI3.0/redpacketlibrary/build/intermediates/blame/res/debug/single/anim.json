@@ -8,12 +8,12 @@
         "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\anim\\push_top_in.xml"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\anim\\hold.xml",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\anim\\hold.xml"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_in2.xml",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\anim\\push_top_in2.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\anim\\hold.xml",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\exploded-aar\\ChatDemoUI3.0\\EaseUI\\unspecified\\res\\anim\\hold.xml"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\ChatDemoUI3.0\\redpacketlibrary\\build\\intermediates\\res\\merged\\debug\\anim\\rp_scale_out.xml",

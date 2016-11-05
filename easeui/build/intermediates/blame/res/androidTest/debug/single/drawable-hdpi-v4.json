@@ -20,12 +20,12 @@
         "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_record_animate_09.png"
     },
     {
-        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ee_33.png",
-        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ee_33.png"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ee_4.png",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ee_4.png"
+    },
+    {
+        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ee_33.png",
+        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ee_33.png"
     },
     {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
@@ -44,12 +44,12 @@
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_record_animate_14.png"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_record_animate_12.png",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_record_animate_12.png"
-    },
-    {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_new_friends_icon.png",
         "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_new_friends_icon.png"
+    },
+    {
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_record_animate_12.png",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_record_animate_12.png"
     },
     {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_input_bar_bg_active.9.png",

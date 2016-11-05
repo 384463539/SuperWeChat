@@ -1570,7 +1570,6 @@ int id listview 0x7f0e00f3
 int id ll_black_list 0x7f0e015d
 int id ll_bottom_container 0x7f0e0139
 int id ll_btns 0x7f0e012d
-int id ll_change 0x7f0e014f
 int id ll_coming_call 0x7f0e013e
 int id ll_diagnose 0x7f0e015e
 int id ll_face_container 0x7f0e0081
@@ -1726,6 +1725,7 @@ int id second_desc 0x7f0e0112
 int id seekbar_y_detal 0x7f0e0135
 int id select_dialog_listview 0x7f0e006b
 int id selected_view 0x7f0e001a
+int id set_iv_back 0x7f0e014f
 int id shortcut 0x7f0e0057
 int id showCustom 0x7f0e0024
 int id showHome 0x7f0e0025

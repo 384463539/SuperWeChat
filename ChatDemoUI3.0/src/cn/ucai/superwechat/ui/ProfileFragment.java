@@ -1,6 +1,7 @@
 package cn.ucai.superwechat.ui;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -84,6 +85,7 @@ public class ProfileFragment extends Fragment {
             case R.id.profile_tv_smail:
                 break;
             case R.id.profile_tv_setting:
+                startActivity(new Intent(getActivity(), SettingsActivity.class));
                 break;
         }
     }
@@ -91,9 +93,9 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        if(((MainActivity)getActivity()).isConflict){
+        if (((MainActivity) getActivity()).isConflict) {
             outState.putBoolean("isConflict", true);
-        }else if(((MainActivity)getActivity()).getCurrentAccountRemoved()){
+        } else if (((MainActivity) getActivity()).getCurrentAccountRemoved()) {
             outState.putBoolean(Constant.ACCOUNT_REMOVED, true);
         }
     }

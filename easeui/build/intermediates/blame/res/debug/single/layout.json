@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_title_bar.xml",
-        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\layout\\ease_widget_title_bar.xml"
-    },
-    {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_expression.xml",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\layout\\ease_row_expression.xml"
+    },
+    {
+        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_title_bar.xml",
+        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\layout\\ease_widget_title_bar.xml"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video_call.xml",
@@ -44,24 +44,24 @@
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon_tab_bar.xml",
-        "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\res\\layout\\ease_widget_emojicon_tab_bar.xml"
+        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_contact.xml",
+        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\layout\\ease_row_contact.xml"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
         "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_contact.xml",
-        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\layout\\ease_row_contact.xml"
-    },
-    {
-        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video.xml",
-        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\layout\\ease_row_sent_video.xml"
+        "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon_tab_bar.xml",
+        "source": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\res\\layout\\ease_widget_emojicon_tab_bar.xml"
     },
     {
         "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video_call.xml",
         "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\layout\\ease_row_received_video_call.xml"
+    },
+    {
+        "merged": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video.xml",
+        "source": "D:\\Andriodwork\\SuperWeChat\\SuperWeChat\\easeui\\res\\layout\\ease_row_sent_video.xml"
     },
     {
         "merged": "D:\\AndroidStudiowork\\SuperWeChat\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
