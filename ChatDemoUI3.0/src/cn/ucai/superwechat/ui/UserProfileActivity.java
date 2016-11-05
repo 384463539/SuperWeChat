@@ -1,17 +1,5 @@
 package cn.ucai.superwechat.ui;
 
-import java.io.ByteArrayOutputStream;
-
-import com.bumptech.glide.Glide;
-import com.hyphenate.EMValueCallBack;
-import com.hyphenate.chat.EMClient;
-
-import cn.ucai.superwechat.SuPerWeChatHelper;
-import cn.ucai.superwechat.R;
-
-import com.hyphenate.easeui.domain.EaseUser;
-import com.hyphenate.easeui.utils.EaseUserUtils;
-
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
@@ -32,34 +20,74 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.hyphenate.EMValueCallBack;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.easeui.domain.EaseUser;
+import com.hyphenate.easeui.utils.EaseUserUtils;
+
+import java.io.ByteArrayOutputStream;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+import cn.ucai.superwechat.R;
+import cn.ucai.superwechat.SuPerWeChatHelper;
+
 public class UserProfileActivity extends BaseActivity implements OnClickListener {
 
     private static final int REQUESTCODE_PICK = 1;
     private static final int REQUESTCODE_CUTTING = 2;
-    private ImageView headAvatar;
-    private ImageView headPhotoUpdate;
-    private ImageView iconRightArrow;
-    private TextView tvNickName;
-    private TextView tvUsername;
+    @InjectView(R.id.title)
+    RelativeLayout title;
+    @InjectView(R.id.user_head_avatar)
+    ImageView headAvatar;
+    @InjectView(R.id.user_nickname)
+    TextView tvNickName;
+    @InjectView(R.id.layout_nickname)
+    RelativeLayout rlNickName;
+    @InjectView(R.id.user_name)
+    TextView tvUsername;
+    @InjectView(R.id.layout_username)
+    RelativeLayout layoutUsername;
+    @InjectView(R.id.layout_ewname)
+    RelativeLayout layoutEwname;
+    @InjectView(R.id.layout_dz)
+    RelativeLayout layoutDz;
+    @InjectView(R.id.user_sex)
+    TextView userSex;
+    @InjectView(R.id.layout_sex)
+    RelativeLayout layoutSex;
+    @InjectView(R.id.user_dq)
+    TextView userDq;
+    @InjectView(R.id.layout_dq)
+    RelativeLayout layoutDq;
+    @InjectView(R.id.user_gxname)
+    TextView userGxname;
+    @InjectView(R.id.layout_gxname)
+    RelativeLayout layoutGxname;
+//    private ImageView headAvatar;
+//    private TextView tvNickName;
+//    private TextView tvUsername;
+//    private RelativeLayout rlNickName;
     private ProgressDialog dialog;
-    private RelativeLayout rlNickName;
+
 
 
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
         setContentView(R.layout.em_activity_user_profile);
+        ButterKnife.inject(this);
         initView();
         initListener();
     }
 
     private void initView() {
-        headAvatar = (ImageView) findViewById(R.id.user_head_avatar);
-        headPhotoUpdate = (ImageView) findViewById(R.id.user_head_headphoto_update);
-        tvUsername = (TextView) findViewById(R.id.user_username);
-        tvNickName = (TextView) findViewById(R.id.user_nickname);
-        rlNickName = (RelativeLayout) findViewById(R.id.rl_nickname);
-        iconRightArrow = (ImageView) findViewById(R.id.ic_right_arrow);
+//        headAvatar = (ImageView) findViewById(R.id.user_head_avatar);
+//        tvUsername = (TextView) findViewById(R.id.user_username);
+//        tvNickName = (TextView) findViewById(R.id.user_nickname);
+//        rlNickName = (RelativeLayout) findViewById(R.id.rl_nickname);
     }
 
     private void initListener() {
@@ -67,57 +95,51 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
         String username = intent.getStringExtra("username");
         boolean enableUpdate = intent.getBooleanExtra("setting", false);
         if (enableUpdate) {
-            headPhotoUpdate.setVisibility(View.VISIBLE);
-            iconRightArrow.setVisibility(View.VISIBLE);
             rlNickName.setOnClickListener(this);
             headAvatar.setOnClickListener(this);
         } else {
-            headPhotoUpdate.setVisibility(View.GONE);
-            iconRightArrow.setVisibility(View.INVISIBLE);
         }
         if (username != null) {
             if (username.equals(EMClient.getInstance().getCurrentUser())) {
                 tvUsername.setText(EMClient.getInstance().getCurrentUser());
                 EaseUserUtils.setUserNick2(username, tvNickName);
-//    			EaseUserUtils.setUserNick(username, tvNickName);
                 EaseUserUtils.setUserAvatar(this, username, headAvatar);
             } else {
                 tvUsername.setText(username);
                 EaseUserUtils.setUserNick2(username, tvNickName);
-//    			EaseUserUtils.setUserNick(username, tvNickName);
                 EaseUserUtils.setUserAvatar2(this, username, headAvatar);
                 asyncFetchUserInfo(username);
             }
         }
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.user_head_avatar:
-                uploadHeadPhoto();
-                break;
-            case R.id.rl_nickname:
-                final EditText editText = new EditText(this);
-                new AlertDialog.Builder(this).setTitle(R.string.setting_nickname).setIcon(android.R.drawable.ic_dialog_info).setView(editText)
-                        .setPositiveButton(R.string.dl_ok, new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                String nickString = editText.getText().toString();
-                                if (TextUtils.isEmpty(nickString)) {
-                                    Toast.makeText(UserProfileActivity.this, getString(R.string.toast_nick_not_isnull), Toast.LENGTH_SHORT).show();
-                                    return;
-                                }
-                                updateRemoteNick(nickString);
-                            }
-                        }).setNegativeButton(R.string.dl_cancel, null).show();
-                break;
-            default:
-                break;
-        }
-
-    }
+//    @Override
+//    public void onClick(View v) {
+//        switch (v.getId()) {
+//            case R.id.user_head_avatar:
+//                uploadHeadPhoto();
+//                break;
+//            case R.id.rl_nickname:
+//                final EditText editText = new EditText(this);
+//                new Builder(this).setTitle(R.string.setting_nickname).setIcon(android.R.drawable.ic_dialog_info).setView(editText)
+//                        .setPositiveButton(R.string.dl_ok, new DialogInterface.OnClickListener() {
+//
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                String nickString = editText.getText().toString();
+//                                if (TextUtils.isEmpty(nickString)) {
+//                                    Toast.makeText(UserProfileActivity.this, getString(R.string.toast_nick_not_isnull), Toast.LENGTH_SHORT).show();
+//                                    return;
+//                                }
+//                                updateRemoteNick(nickString);
+//                            }
+//                        }).setNegativeButton(R.string.dl_cancel, null).show();
+//                break;
+//            default:
+//                break;
+//        }
+//
+//    }
 
     public void asyncFetchUserInfo(String username) {
         SuPerWeChatHelper.getInstance().getUserProfileManager().asyncGetUserInfo(username, new EMValueCallBack<EaseUser>() {
@@ -146,7 +168,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 
 
     private void uploadHeadPhoto() {
-        AlertDialog.Builder builder = new Builder(this);
+        Builder builder = new Builder(this);
         builder.setTitle(R.string.dl_title_upload_photo);
         builder.setItems(new String[]{getString(R.string.dl_msg_take_photo), getString(R.string.dl_msg_local_upload)},
                 new DialogInterface.OnClickListener() {
@@ -287,5 +309,44 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
         return baos.toByteArray();
+    }
+
+    @OnClick({R.id.title, R.id.user_head_avatar, R.id.layout_nickname, R.id.layout_username, R.id.layout_ewname, R.id.layout_dz, R.id.layout_sex, R.id.layout_dq, R.id.layout_gxname})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.title:
+                break;
+            case R.id.user_head_avatar:
+                uploadHeadPhoto();
+                break;
+            case R.id.layout_nickname:
+                final EditText editText = new EditText(this);
+                new Builder(this).setTitle(R.string.setting_nickname).setIcon(android.R.drawable.ic_dialog_info).setView(editText)
+                        .setPositiveButton(R.string.dl_ok, new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String nickString = editText.getText().toString();
+                                if (TextUtils.isEmpty(nickString)) {
+                                    Toast.makeText(UserProfileActivity.this, getString(R.string.toast_nick_not_isnull), Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+                                updateRemoteNick(nickString);
+                            }
+                        }).setNegativeButton(R.string.dl_cancel, null).show();
+                break;
+            case R.id.layout_username:
+                break;
+            case R.id.layout_ewname:
+                break;
+            case R.id.layout_dz:
+                break;
+            case R.id.layout_sex:
+                break;
+            case R.id.layout_dq:
+                break;
+            case R.id.layout_gxname:
+                break;
+        }
     }
 }

@@ -71,9 +71,13 @@ public class ProfileFragment extends Fragment {
         ButterKnife.reset(this);
     }
 
-    @OnClick({R.id.profile_tv_phone, R.id.profile_tv_collect, R.id.profile_tv_money, R.id.profile_tv_smail, R.id.profile_tv_setting})
+    @OnClick({R.id.profile_iv_userAvatar, R.id.profile_tv_phone, R.id.profile_tv_collect, R.id.profile_tv_money, R.id.profile_tv_smail, R.id.profile_tv_setting})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.profile_iv_userAvatar:
+                startActivity(new Intent(getActivity(), UserProfileActivity.class).putExtra("setting", true)
+                        .putExtra("username", EMClient.getInstance().getCurrentUser()));
+                break;
             case R.id.profile_tv_phone:
                 break;
             case R.id.profile_tv_collect:
