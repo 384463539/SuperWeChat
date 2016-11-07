@@ -76,7 +76,6 @@ public class AddContactActivity extends BaseActivity {
         progressDialog.setMessage(stri);
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.show();
-
         NetDao.findUser(this, name, new OkHttpUtils.OnCompleteListener<Result>() {
             @Override
             public void onSuccess(Result result) {

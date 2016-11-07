@@ -270,6 +270,10 @@
     <init>();
 }
 
+-keep class cn.ucai.superwechat.ui.AddFriendActivity {
+    <init>();
+}
+
 -keep public class * extends android.app.backup.BackupAgent {
     <init>();
 }

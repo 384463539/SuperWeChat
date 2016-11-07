@@ -88,7 +88,10 @@ public class FindFriendActivity extends BaseActivity {
             case R.id.findfriend_tv_sz:
                 break;
             case R.id.findfriend_btn_add:
-
+                Intent intent = new Intent(FindFriendActivity.this, AddFriendActivity.class);
+                intent.putExtra("name",name);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.findfriend_btn_sendmessage:
                 break;

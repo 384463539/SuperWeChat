@@ -8,6 +8,7 @@
         android:minSdkVersion="11"
         android:targetSdkVersion="23" />
 
+
     　
 
 
@@ -482,6 +483,7 @@
 
         <activity android:name="cn.ucai.superwechat.ui.GuideActivity" />
         <activity android:name="cn.ucai.superwechat.ui.FindFriendActivity" />
+        <activity android:name="cn.ucai.superwechat.ui.AddFriendActivity" />
     </application>
 
 </manifest>

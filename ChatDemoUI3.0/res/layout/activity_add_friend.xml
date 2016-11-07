@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/findfrind_layout_back"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1a1919"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/add_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/em_mm_title_back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="微信"
+            android:textColor="#fff"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/add_tv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp"
+            android:text="发送"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="你需要发送申请，等待对方同意"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/add_et_note"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/em_button_normal_shape"
+        android:hint="@string/user_name"
+        android:paddingLeft="5dp"
+        android:singleLine="true"
+        android:textColorHint="#b3b3b3"
+        android:textSize="18sp" />
+</LinearLayout>
