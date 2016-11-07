@@ -340,9 +340,9 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 
     @Override
     public void onCheckedChange(int checkedPosition, boolean byUser) {
-        if (checkedPosition == 3) {
-            profileFragment.initView();
-        }
+//        if (checkedPosition == 3) {
+//            profileFragment.initView();
+//        }
         mainViewpager.setCurrentItem(checkedPosition, false);
     }
 
@@ -352,9 +352,9 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 
     @Override
     public void onPageSelected(int position) {
-        if (position == 3) {
-            profileFragment.initView();
-        }
+//        if (position == 3) {
+//            profileFragment.initView();
+//        }
         mainHost.setChecked(position);
     }
 

@@ -245,7 +245,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
         Bundle bundle = data.getExtras();
         if (bundle != null) {
             Bitmap bitmap = bundle.getParcelable("data");
-            String imagePath = EaseImageUtils.getImagePath(user.getMUserName()+ I.AVATAR_SUFFIX_PNG);
+            String imagePath = EaseImageUtils.getImagePath(user.getMUserName() + I.AVATAR_SUFFIX_PNG);
             File file = new File(imagePath);
             try {
                 BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(file));
@@ -267,8 +267,12 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
         NetDao.updatAvatar(this, user.getMUserName(), file, new OkHttpUtils.OnCompleteListener<Result>() {
             @Override
             public void onSuccess(Result result) {
-                Log.e("superwechat",result.toString());
+                Log.e("superwechat", result.toString());
                 if (result != null && result.isRetMsg()) {
+                    String json = result.getRetData().toString();
+                    Gson gson = new Gson();
+                    UserBean u = gson.fromJson(json, UserBean.class);
+                    SuPerWeChatHelper.getInstance().saveAppcontact(u);
                     setPicToView(data);
                 } else {
                     Toast.makeText(UserProfileActivity.this, "头像上传失败1", Toast.LENGTH_SHORT).show();
@@ -330,7 +334,12 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
             Bitmap photo = extras.getParcelable("data");
             Drawable drawable = new BitmapDrawable(getResources(), photo);
             headAvatar.setImageDrawable(drawable);
-            uploadUserAvatar(Bitmap2Bytes(photo));
+            dialog.dismiss();
+            Toast.makeText(UserProfileActivity.this, getString(R.string.toast_updatephoto_success),
+                    Toast.LENGTH_SHORT).show();
+
+
+//            uploadUserAvatar(Bitmap2Bytes(photo));
         }
 
     }
