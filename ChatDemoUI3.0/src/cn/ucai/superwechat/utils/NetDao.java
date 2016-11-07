@@ -55,10 +55,30 @@ public class NetDao {
         OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_UPDATE_AVATAR)
                 .addParam(I.NAME_OR_HXID, name)
-                .addParam(I.AVATAR_TYPE,I.AVATAR_TYPE_USER_PATH)
+                .addParam(I.AVATAR_TYPE, I.AVATAR_TYPE_USER_PATH)
                 .addFile2(file)
                 .targetClass(Result.class)
                 .post()
                 .execute(listtener);
     }
+
+    //查询用户信息
+    public static void findUser(Context context, String name, OkHttpUtils.OnCompleteListener<Result> listener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_FIND_USER)
+                .addParam(I.User.USER_NAME, name)
+                .targetClass(Result.class)
+                .execute(listener);
+    }
+
+    //添加好友
+    public static void addFriedn(Context context, String name, String friendName, OkHttpUtils.OnCompleteListener<Result> listener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_ADD_CONTACT)
+                .addParam(I.Contact.USER_NAME, name)
+                .addParam(I.Contact.CU_NAME, friendName)
+                .targetClass(Result.class)
+                .execute(listener);
+    }
+
 }

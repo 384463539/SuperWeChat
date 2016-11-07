@@ -7,7 +7,7 @@ import butterknife.ButterKnife.Finder;
 public class LoginActivity$$ViewInjector {
   public static void inject(Finder finder, final cn.ucai.superwechat.ui.LoginActivity target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131624186, "field 'loginLayoutBack' and method 'onClick'");
+    view = finder.findRequiredView(source, 2131624196, "field 'loginLayoutBack' and method 'onClick'");
     target.loginLayoutBack = (android.widget.LinearLayout) view;
     view.setOnClickListener(
       new android.view.View.OnClickListener() {

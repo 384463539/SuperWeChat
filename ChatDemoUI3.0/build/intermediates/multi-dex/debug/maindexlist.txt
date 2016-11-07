@@ -554,6 +554,7 @@ org/apache/http/cookie/CookieAttributeHandler.class
 org/apache/http/client/methods/AbortableHttpRequest.class
 android/support/v4/media/session/MediaSessionCompat$Callback.class
 org/apache/http/HttpEntity.class
+cn/ucai/superwechat/ui/FindFriendActivity.class
 cn/ucai/superwechat/ui/VideoCallActivity$3.class
 com/easemob/redpacketui/recyclerview/widget/AdapterHelper.class
 cn/ucai/superwechat/ui/GroupSearchMessageActivity$5.class
