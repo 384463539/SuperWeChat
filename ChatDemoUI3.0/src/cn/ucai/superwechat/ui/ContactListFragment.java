@@ -26,6 +26,7 @@ import cn.ucai.superwechat.db.UserDao;
 import cn.ucai.superwechat.widget.ContactItemView;
 
 import com.hyphenate.easeui.domain.EaseUser;
+import com.hyphenate.easeui.domain.UserBean;
 import com.hyphenate.easeui.ui.EaseContactListFragment;
 import com.hyphenate.util.EMLog;
 import com.hyphenate.util.NetUtils;
@@ -46,7 +47,6 @@ import android.widget.Toast;
 
 /**
  * contact list
- *
  */
 public class ContactListFragment extends EaseContactListFragment {
 
@@ -118,18 +118,21 @@ public class ContactListFragment extends EaseContactListFragment {
         setContactsMap(m);
         super.setUpView();
         listView.setOnItemClickListener(new OnItemClickListener() {
-
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 EaseUser user = (EaseUser) listView.getItemAtPosition(position);
                 if (user != null) {
                     String username = user.getUsername();
+
+                    UserBean userBean = SuPerWeChatHelper.getInstance().getAppcontactList().get(username);
+                    
+                    startActivity(new Intent(getActivity(), FindFriendActivity.class).putExtra("userbean", userBean));
+
                     // demo中直接进入聊天页面，实际一般是进入用户详情页
-                    startActivity(new Intent(getActivity(), ChatActivity.class).putExtra("userId", username));
+//                    startActivity(new Intent(getActivity(), ChatActivity.class).putExtra("userId", username));
                 }
             }
         });
-
 
         // 进入添加好友页
         titleBar.getRightLayout().setOnClickListener(new OnClickListener() {

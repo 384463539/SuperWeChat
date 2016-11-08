@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import com.easemob.redpacketui.RedPacketConstant;
 import com.easemob.redpacketui.utils.RedPacketUtil;
+import com.google.gson.Gson;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.EMConnectionListener;
 import com.hyphenate.EMContactListener;
@@ -26,6 +27,7 @@ import com.hyphenate.chat.EMMessage.Type;
 import com.hyphenate.chat.EMOptions;
 import com.hyphenate.chat.EMTextMessageBody;
 
+import cn.ucai.superwechat.bean.Result;
 import cn.ucai.superwechat.db.SuperWeChatDBManager;
 import cn.ucai.superwechat.db.InviteMessgeDao;
 import cn.ucai.superwechat.db.UserDao;
@@ -40,6 +42,8 @@ import cn.ucai.superwechat.ui.MainActivity;
 import cn.ucai.superwechat.ui.VideoCallActivity;
 import cn.ucai.superwechat.ui.VoiceCallActivity;
 import cn.ucai.superwechat.utils.L;
+import cn.ucai.superwechat.utils.NetDao;
+import cn.ucai.superwechat.utils.OkHttpUtils;
 import cn.ucai.superwechat.utils.PreferenceManager;
 
 import com.hyphenate.easeui.controller.EaseUI;
@@ -642,14 +646,29 @@ public class SuPerWeChatHelper {
             Map<String, EaseUser> localUsers = getContactList();
             Map<String, EaseUser> toAddUsers = new HashMap<String, EaseUser>();
             EaseUser user = new EaseUser(username);
-
             if (!localUsers.containsKey(username)) {
                 userDao.saveContact(user);
             }
             toAddUsers.put(username, user);
             localUsers.putAll(toAddUsers);
 
-            broadcastManager.sendBroadcast(new Intent(Constant.ACTION_CONTACT_CHANAGED));
+            NetDao.addFriedn(context, EMClient.getInstance().getCurrentUser(), username, new OkHttpUtils.OnCompleteListener<Result>() {
+                @Override
+                public void onSuccess(Result result) {
+                    if (result != null && result.isRetMsg()) {
+                        String json = result.getRetData().toString();
+                        Gson gson = new Gson();
+                        UserBean userBean = gson.fromJson(json, UserBean.class);
+                        saveAppcontact(userBean);
+                        //成功后向广播发送消息
+                        broadcastManager.sendBroadcast(new Intent(Constant.ACTION_CONTACT_CHANAGED));
+                    }
+                }
+                @Override
+                public void onError(String error) {
+                }
+            });
+//            broadcastManager.sendBroadcast(new Intent(Constant.ACTION_CONTACT_CHANAGED));
         }
 
         @Override
@@ -1304,7 +1323,7 @@ public class SuPerWeChatHelper {
      * @return
      */
     public Map<String, UserBean> getAppcontactList() {
-        if (isLoggedIn() && (appContactList == null||appContactList.size()==0)){
+        if (isLoggedIn() && (appContactList == null || appContactList.size() == 0)) {
             L.i("为空");
             appContactList = demoModel.getAppContactList();
         }

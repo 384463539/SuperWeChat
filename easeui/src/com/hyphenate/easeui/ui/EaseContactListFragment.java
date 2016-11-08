@@ -37,6 +37,7 @@ import com.hyphenate.EMError;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.R;
 import com.hyphenate.easeui.domain.EaseUser;
+import com.hyphenate.easeui.domain.UserBean;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
 import com.hyphenate.easeui.widget.EaseContactList;
 import com.hyphenate.exceptions.HyphenateException;
@@ -318,6 +319,7 @@ public class EaseContactListFragment extends EaseBaseFragment {
     public void setContactsMap(Map<String, EaseUser> contactsMap){
         this.contactsMap = contactsMap;
     }
+
     
     public interface EaseContactListItemClickListener {
         /**

@@ -154,22 +154,6 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
                 holder.agree.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        NetDao.addFriedn(context, EMClient.getInstance().getCurrentUser(), msg.getFrom(), new OkHttpUtils.OnCompleteListener<Result>() {
-//                            @Override
-//                            public void onSuccess(Result result) {
-//                                if (result != null && result.isRetMsg()) {
-
-//                                    acceptInvitation(holder.agree, holder.status, msg);
-//                                } else {
-//                                    Toast.makeText(context, "添加失败", Toast.LENGTH_SHORT).show();
-//                                }
-//                            }
-//
-//                            @Override
-//                            public void onError(String error) {
-//                                Toast.makeText(context, "添加失败", Toast.LENGTH_SHORT).show();
-//                            }
-//                        });
                         // accept invitation
                         acceptInvitation(holder.agree, holder.status, msg);
                     }

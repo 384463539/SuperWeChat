@@ -94,6 +94,7 @@ public class FindFriendActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.findfriend_btn_sendmessage:
+                startActivity(new Intent(this, ChatActivity.class).putExtra("userId", name));
                 break;
             case R.id.findfriend_btn_videocat:
                 break;
