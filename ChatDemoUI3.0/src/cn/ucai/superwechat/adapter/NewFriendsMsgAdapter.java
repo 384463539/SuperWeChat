@@ -111,10 +111,9 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
                         Gson gson = new Gson();
                         UserBean userBean = gson.fromJson(json, UserBean.class);
                         holder.name.setText(userBean.getMUserNick());
-                        EaseUserUtils.setUserAvatar3(context, userBean.getMAvatarPath(), holder.avator);
+                        EaseUserUtils.setUserAvatar3(context, userBean.getAvatar(), holder.avator);
                     }
                 }
-
                 @Override
                 public void onError(String error) {
                 }
