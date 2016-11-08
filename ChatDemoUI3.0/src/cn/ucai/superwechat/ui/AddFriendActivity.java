@@ -28,6 +28,7 @@ public class AddFriendActivity extends AppCompatActivity {
     EditText addEtNote;
     ProgressDialog progressDialog;
     String name;
+    String meg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class AddFriendActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        String meg = "我是" + EaseUserUtils.getUserInfo2(EMClient.getInstance().getCurrentUser()).getMUserNick();
+        meg = "我是" + EaseUserUtils.getUserInfo2(EMClient.getInstance().getCurrentUser()).getMUserNick();
         addEtNote.setText(meg);
     }
 
@@ -60,7 +61,7 @@ public class AddFriendActivity extends AppCompatActivity {
                         try {
                             //demo use a hardcode reason here, you need let user to input if you like
                             String s = getResources().getString(R.string.Add_a_friend);
-                            EMClient.getInstance().contactManager().addContact(name, s);
+                            EMClient.getInstance().contactManager().addContact(name, meg);
                             runOnUiThread(new Runnable() {
                                 public void run() {
                                     progressDialog.dismiss();

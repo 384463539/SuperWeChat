@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.baidu.platform.comapi.map.L;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.hyphenate.easeui.R;
@@ -68,6 +69,20 @@ public class EaseUserUtils {
             } catch (Exception e) {
                 //use default avatar
                 Glide.with(context).load(user.getAvatar()).diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.ease_default_avatar).into(imageView);
+            }
+        } else {
+            Glide.with(context).load(R.drawable.ease_default_avatar).into(imageView);
+        }
+    }
+
+    public static void setUserAvatar3(Context context, String path, ImageView imageView) {
+        if (path != null && path.length() > 0) {
+            try {
+                int avatarResId = Integer.parseInt(path);
+                Glide.with(context).load(avatarResId).into(imageView);
+            } catch (Exception e) {
+                //use default avatar
+                Glide.with(context).load(path).diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.ease_default_avatar).into(imageView);
             }
         } else {
             Glide.with(context).load(R.drawable.ease_default_avatar).into(imageView);

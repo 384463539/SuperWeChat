@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2016 Hyphenate Inc. All rights reserved.
- * <p/>
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,10 +78,9 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 //	private TextView unreadAddressLable;
 //
 //	private Button[] mTabs;
-//	private ContactListFragment contactListFragment;
-//	private Fragment[] fragments;
-//	private int index;
-//	private int currentTabIndex;
+    //	private Fragment[] fragments;
+    private int index;
+    private int currentTabIndex = 0;
     // user logged into another device
     public boolean isConflict = false;
     @InjectView(R.id.main_iv_back)
@@ -96,6 +95,7 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
     private boolean isCurrentAccountRemoved = false;
     MainTabAdpter adpter;
     ProfileFragment profileFragment;
+    ContactListFragment contactListFragment;
     TitlePopup titlePopup;
 
     /**
@@ -148,7 +148,6 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
         UserDao userDao = new UserDao(this);
 
 //		conversationListFragment = new ConversationListFragment();
-//		contactListFragment = new ContactListFragment();
 //		fragments = new Fragment[] { conversationListFragment, contactListFragment, settingFragment};
 //		getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, conversationListFragment)
 //				.add(R.id.fragment_container, contactListFragment).hide(contactListFragment).show(conversationListFragment)
@@ -209,12 +208,13 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 //		mTabs[2] = (Button) findViewById(R.id.btn_setting);
 //		// select first tab
 //		mTabs[0].setSelected(true);
+        contactListFragment = new ContactListFragment();
         profileFragment = new ProfileFragment();
         adpter = new MainTabAdpter(getSupportFragmentManager());
         mainViewpager.setAdapter(adpter);
         mainViewpager.setOffscreenPageLimit(4);
         adpter.addFragment(new ConversationListFragment(), getString(R.string.app_name));
-        adpter.addFragment(new ContactListFragment(), getString(R.string.contacts));
+        adpter.addFragment(contactListFragment, getString(R.string.contacts));
         adpter.addFragment(new DiscoverFragment(), getString(R.string.discover));
         adpter.addFragment(profileFragment, getString(R.string.me));
         adpter.notifyDataSetChanged();
@@ -329,11 +329,12 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 //                    if (conversationListFragment != null) {
 //                        conversationListFragment.refresh();
 //                    }
-//                } else if (currentTabIndex == 1) {
-//                    if(contactListFragment != null) {
-//                        contactListFragment.refresh();
-//                    }
-//                }
+//                } else
+                if (currentTabIndex == 1) {
+                    if (contactListFragment != null) {
+                        contactListFragment.refresh();
+                    }
+                }
                 String action = intent.getAction();
                 if (action.equals(Constant.ACTION_GROUP_CHANAGED)) {
                     if (EaseCommonUtils.getTopActivity(MainActivity.this).equals(GroupsActivity.class.getName())) {
@@ -369,6 +370,7 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 //        if (checkedPosition == 3) {
 //            profileFragment.initView();
 //        }
+        currentTabIndex = checkedPosition;
         mainViewpager.setCurrentItem(checkedPosition, false);
     }
 
@@ -381,6 +383,7 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 //        if (position == 3) {
 //            profileFragment.initView();
 //        }
+        currentTabIndex = position;
         mainHost.setChecked(position);
     }
 
@@ -463,11 +466,12 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
         runOnUiThread(new Runnable() {
             public void run() {
                 int count = getUnreadAddressCountTotal();
-//				if (count > 0) {
-//					unreadAddressLable.setVisibility(View.VISIBLE);
-//				} else {
+                if (count > 0) {
+                    mainHost.setHasNew(1, true);
+                } else {
+                    mainHost.setHasNew(1, false);
 //					unreadAddressLable.setVisibility(View.INVISIBLE);
-//				}
+                }
             }
         });
 
