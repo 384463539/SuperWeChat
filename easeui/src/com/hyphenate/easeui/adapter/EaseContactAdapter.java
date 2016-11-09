@@ -177,8 +177,8 @@ public class EaseContactAdapter extends ArrayAdapter<UserBean> implements Sectio
                 for (int i = 0; i < count; i++) {
                     final UserBean user = mOriginalList.get(i);
                     String username = user.getMUserName();
-
-                    if (username.startsWith(prefixString)) {
+                    String nick = user.getMUserNick();
+                    if (username.contains(prefixString) || nick.contains(prefixString)) {
                         newValues.add(user);
                     } else {
                         final String[] words = username.split(" ");
