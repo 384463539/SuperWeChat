@@ -325,16 +325,16 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
             public void onReceive(Context context, Intent intent) {
                 updateUnreadLabel();
                 updateUnreadAddressLable();
-                if (currentTabIndex == 0) {
+//                if (currentTabIndex == 0) {
                     // refresh conversation list
                     if (conversationListFragment != null) {
                         conversationListFragment.refresh();
                     }
-                } else if (currentTabIndex == 1) {
+//                } else if (currentTabIndex == 1) {
                     if (contactListFragment != null) {
                         contactListFragment.refresh();
                     }
-                }
+//                }
                 String action = intent.getAction();
                 if (action.equals(Constant.ACTION_GROUP_CHANAGED)) {
                     if (EaseCommonUtils.getTopActivity(MainActivity.this).equals(GroupsActivity.class.getName())) {
@@ -634,6 +634,11 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
         } else if (intent.getBooleanExtra(Constant.ACCOUNT_REMOVED, false) && !isAccountRemovedDialogShow) {
             showAccountRemovedDialog();
         }
+
+        boolean isBack = intent.getBooleanExtra("isBack",false);
+        if (isBack){
+            mainHost.setChecked(0);
+        }
     }
 
     /**
@@ -676,4 +681,5 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
                                            @NonNull int[] grantResults) {
         PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
     }
+
 }

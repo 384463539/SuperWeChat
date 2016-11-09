@@ -495,7 +495,6 @@ android/support/annotation/LayoutRes.class
 com/easemob/redpacketui/ui/activity/RPChangeActivity.class
 com/baidu/location/c/a.class
 cn/ucai/superwechat/ui/GroupDetailsActivity$3.class
-com/hyphenate/util/EasyUtils.class
 org/apache/http/params/HttpConnectionParamBean.class
 org/apache/http/impl/DefaultConnectionReuseStrategy.class
 com/easemob/redpacketsdk/RedPacket.class
