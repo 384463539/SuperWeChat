@@ -36,6 +36,7 @@ import cn.ucai.superwechat.widget.ChatRowVoiceCall;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.ui.EaseChatFragment;
 import com.hyphenate.easeui.ui.EaseChatFragment.EaseChatFragmentHelper;
+import com.hyphenate.easeui.utils.EaseUserUtils;
 import com.hyphenate.easeui.widget.chatrow.EaseChatRow;
 import com.hyphenate.easeui.widget.chatrow.EaseCustomChatRowProvider;
 import com.hyphenate.easeui.widget.emojicon.EaseEmojiconMenu;
@@ -254,8 +255,8 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragmentHe
     @Override
     public void onAvatarClick(String username) {
         //handling when user click avatar
-        Intent intent = new Intent(getActivity(), UserProfileActivity.class);
-        intent.putExtra("username", username);
+        Intent intent = new Intent(getActivity(), FindFriendActivity.class);
+        intent.putExtra("userbean", EaseUserUtils.getUserInfo2(username));
         startActivity(intent);
     }
     
