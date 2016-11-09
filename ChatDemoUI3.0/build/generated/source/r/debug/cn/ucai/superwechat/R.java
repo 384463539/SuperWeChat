@@ -2942,7 +2942,6 @@ containing a value of this type.
         public static final int add_et_note=0x7f0e006f;
         public static final int add_iv_back=0x7f0e006d;
         public static final int add_list_friends=0x7f0e00e2;
-        public static final int add_to_blacklist=0x7f0e02c7;
         public static final int add_tv_add=0x7f0e006e;
         public static final int agree=0x7f0e0189;
         public static final int alertTitle=0x7f0e004d;
@@ -3036,8 +3035,8 @@ containing a value of this type.
         public static final int decor_content_parent=0x7f0e005c;
         public static final int default_activity_button=0x7f0e0044;
         public static final int delete_contact=0x7f0e02c6;
-        public static final int delete_conversation=0x7f0e02cb;
-        public static final int delete_message=0x7f0e02cc;
+        public static final int delete_conversation=0x7f0e02ca;
+        public static final int delete_message=0x7f0e02cb;
         public static final int detail_fragment_container=0x7f0e01c4;
         public static final int detail_loading_target=0x7f0e0207;
         public static final int dialog_hint_cancel=0x7f0e026e;
@@ -3324,7 +3323,7 @@ containing a value of this type.
         public static final int rectangle=0x7f0e002e;
         public static final int register=0x7f0e0130;
         public static final int register_layout_back=0x7f0e0129;
-        public static final int remove=0x7f0e02cd;
+        public static final int remove=0x7f0e02cc;
         public static final int restart_preview=0x7f0e0015;
         public static final int return_scan_result=0x7f0e0016;
         public static final int right_image=0x7f0e00df;
@@ -3614,9 +3613,9 @@ containing a value of this type.
         public static final int unread_count=0x7f0e01a5;
         public static final int unread_msg_number=0x7f0e00a0;
         public static final int up=0x7f0e001c;
-        public static final int update_blacklist=0x7f0e02c9;
-        public static final int update_contacts=0x7f0e02c8;
-        public static final int update_groups=0x7f0e02ca;
+        public static final int update_blacklist=0x7f0e02c8;
+        public static final int update_contacts=0x7f0e02c7;
+        public static final int update_groups=0x7f0e02c9;
         public static final int useLogo=0x7f0e0027;
         public static final int user_dq=0x7f0e013c;
         public static final int user_gxname=0x7f0e013e;

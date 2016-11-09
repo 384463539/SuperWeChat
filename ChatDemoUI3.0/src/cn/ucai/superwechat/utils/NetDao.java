@@ -80,5 +80,14 @@ public class NetDao {
                 .targetClass(Result.class)
                 .execute(listener);
     }
+    //添加好友
+    public static void deletFriend(Context context, String name, String friendName, OkHttpUtils.OnCompleteListener<Result> listener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_DELETE_CONTACT)
+                .addParam(I.Contact.USER_NAME, name)
+                .addParam(I.Contact.CU_NAME, friendName)
+                .targetClass(Result.class)
+                .execute(listener);
+    }
 
 }

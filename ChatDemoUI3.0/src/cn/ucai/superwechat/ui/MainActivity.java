@@ -96,6 +96,7 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
     MainTabAdpter adpter;
     ProfileFragment profileFragment;
     ContactListFragment contactListFragment;
+    private ConversationListFragment conversationListFragment;
     TitlePopup titlePopup;
 
     /**
@@ -209,11 +210,12 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 //		// select first tab
 //		mTabs[0].setSelected(true);
         contactListFragment = new ContactListFragment();
+        conversationListFragment = new ConversationListFragment();
         profileFragment = new ProfileFragment();
         adpter = new MainTabAdpter(getSupportFragmentManager());
         mainViewpager.setAdapter(adpter);
         mainViewpager.setOffscreenPageLimit(4);
-        adpter.addFragment(new ConversationListFragment(), getString(R.string.app_name));
+        adpter.addFragment(conversationListFragment, getString(R.string.app_name));
         adpter.addFragment(contactListFragment, getString(R.string.contacts));
         adpter.addFragment(new DiscoverFragment(), getString(R.string.discover));
         adpter.addFragment(profileFragment, getString(R.string.me));
@@ -297,12 +299,11 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
         runOnUiThread(new Runnable() {
             public void run() {
                 updateUnreadLabel();
-//				if (currentTabIndex == 0) {
-//					// refresh conversation list
-//					if (conversationListFragment != null) {
-//						conversationListFragment.refresh();
-//					}
-//				}
+				if (currentTabIndex == 0) {
+					if (conversationListFragment != null) {
+						conversationListFragment.refresh();
+					}
+				}
             }
         });
     }
@@ -324,13 +325,12 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
             public void onReceive(Context context, Intent intent) {
                 updateUnreadLabel();
                 updateUnreadAddressLable();
-//                if (currentTabIndex == 0) {
-//                    // refresh conversation list
-//                    if (conversationListFragment != null) {
-//                        conversationListFragment.refresh();
-//                    }
-//                } else
-                if (currentTabIndex == 1) {
+                if (currentTabIndex == 0) {
+                    // refresh conversation list
+                    if (conversationListFragment != null) {
+                        conversationListFragment.refresh();
+                    }
+                } else if (currentTabIndex == 1) {
                     if (contactListFragment != null) {
                         contactListFragment.refresh();
                     }
@@ -551,7 +551,6 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
     private boolean isConflictDialogShow;
     private boolean isAccountRemovedDialogShow;
     private BroadcastReceiver internalDebugReceiver;
-    private ConversationListFragment conversationListFragment;
     private BroadcastReceiver broadcastReceiver;
     private LocalBroadcastManager broadcastManager;
 

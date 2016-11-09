@@ -16,13 +16,17 @@ package cn.ucai.superwechat.ui;
 import java.util.Hashtable;
 import java.util.Map;
 
+import com.baidu.platform.comapi.map.N;
 import com.hyphenate.chat.EMClient;
 
 import cn.ucai.superwechat.SuPerWeChatHelper;
 
 import cn.ucai.superwechat.R;
+import cn.ucai.superwechat.bean.Result;
 import cn.ucai.superwechat.db.InviteMessgeDao;
 import cn.ucai.superwechat.db.UserDao;
+import cn.ucai.superwechat.utils.NetDao;
+import cn.ucai.superwechat.utils.OkHttpUtils;
 import cn.ucai.superwechat.widget.ContactItemView;
 
 import com.hyphenate.easeui.domain.EaseUser;
@@ -123,11 +127,8 @@ public class ContactListFragment extends EaseContactListFragment {
                 EaseUser user = (EaseUser) listView.getItemAtPosition(position);
                 if (user != null) {
                     String username = user.getUsername();
-
                     UserBean userBean = SuPerWeChatHelper.getInstance().getAppcontactList().get(username);
-                    
                     startActivity(new Intent(getActivity(), FindFriendActivity.class).putExtra("userbean", userBean));
-
                     // demo中直接进入聊天页面，实际一般是进入用户详情页
 //                    startActivity(new Intent(getActivity(), ChatActivity.class).putExtra("userId", username));
                 }
@@ -225,14 +226,16 @@ public class ContactListFragment extends EaseContactListFragment {
                 // remove invitation message
                 InviteMessgeDao dao = new InviteMessgeDao(getActivity());
                 dao.deleteMessage(toBeProcessUser.getUsername());
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
             return true;
-        } else if (item.getItemId() == R.id.add_to_blacklist) {
-            moveToBlacklist(toBeProcessUsername);
-            return true;
         }
+//        else if (item.getItemId() == R.id.add_to_blacklist) {
+//            moveToBlacklist(toBeProcessUsername);
+//            return true;
+//        }
         return super.onContextItemSelected(item);
     }
 
@@ -249,11 +252,24 @@ public class ContactListFragment extends EaseContactListFragment {
         pd.setMessage(st1);
         pd.setCanceledOnTouchOutside(false);
         pd.show();
+
+        NetDao.deletFriend(getActivity(), EMClient.getInstance().getCurrentUser(), tobeDeleteUser.getUsername(), new OkHttpUtils.OnCompleteListener<Result>() {
+            @Override
+            public void onSuccess(Result result) {
+                if (result != null && result.isRetMsg()) {
+                    SuPerWeChatHelper.getInstance().deletAppcontact(tobeDeleteUser.getUsername());
+                    Toast.makeText(getActivity(), "删除好友成功", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onError(String error) {
+            }
+        });
         new Thread(new Runnable() {
             public void run() {
                 try {
                     EMClient.getInstance().contactManager().deleteContact(tobeDeleteUser.getUsername());
-                    // remove user from memory and database
+                    // remove user from memory and database  删除环信数据库和user数据库里的数据，再删除contactlist里面的数据
                     UserDao dao = new UserDao(getActivity());
                     dao.deleteContact(tobeDeleteUser.getUsername());
                     SuPerWeChatHelper.getInstance().getContactList().remove(tobeDeleteUser.getUsername());
@@ -262,7 +278,6 @@ public class ContactListFragment extends EaseContactListFragment {
                             pd.dismiss();
                             contactList.remove(tobeDeleteUser);
                             contactListLayout.refresh();
-
                         }
                     });
                 } catch (final Exception e) {
