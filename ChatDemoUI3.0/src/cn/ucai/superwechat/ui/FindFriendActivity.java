@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.domain.UserBean;
 import com.hyphenate.easeui.utils.EaseUserUtils;
 
@@ -97,6 +99,13 @@ public class FindFriendActivity extends BaseActivity {
                 startActivity(new Intent(this, ChatActivity.class).putExtra("userId", name));
                 break;
             case R.id.findfriend_btn_videocat:
+                if (!EMClient.getInstance().isConnected())
+                    Toast.makeText(this, R.string.not_connect_to_server, Toast.LENGTH_SHORT).show();
+                else {
+                    startActivity(new Intent(this, VideoCallActivity.class).putExtra("username", name)
+                            .putExtra("isComingCall", false));
+                    // videoCallBtn.setEnabled(false);
+                }
                 break;
         }
     }

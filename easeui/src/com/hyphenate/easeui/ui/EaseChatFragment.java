@@ -41,6 +41,7 @@ import com.hyphenate.easeui.R;
 import com.hyphenate.easeui.controller.EaseUI;
 import com.hyphenate.easeui.domain.EaseEmojicon;
 import com.hyphenate.easeui.domain.EaseUser;
+import com.hyphenate.easeui.domain.UserBean;
 import com.hyphenate.easeui.model.EaseAtMessageHelper;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
 import com.hyphenate.easeui.utils.EaseUserUtils;
@@ -181,12 +182,19 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
 
     protected void setUpView() {
         titleBar.setTitle(toChatUsername);
+        titleBar.setBackgroundColor(getResources().getColor(R.color.black_deep));
         if (chatType == EaseConstant.CHATTYPE_SINGLE) {
-            // set title
-            if (EaseUserUtils.getUserInfo(toChatUsername) != null) {
-                EaseUser user = EaseUserUtils.getUserInfo(toChatUsername);
+//            // set title
+//            if (EaseUserUtils.getUserInfo(toChatUsername) != null) {
+//                EaseUser user = EaseUserUtils.getUserInfo(toChatUsername);
+//                if (user != null) {
+//                    titleBar.setTitle(user.getNick());
+//                }
+//            }
+            if (EaseUserUtils.getUserInfo2(toChatUsername) != null) {
+                UserBean user = EaseUserUtils.getUserInfo2(toChatUsername);
                 if (user != null) {
-                    titleBar.setTitle(user.getNick());
+                    titleBar.setTitle(user.getMUserNick());
                 }
             }
             titleBar.setRightImageResource(R.drawable.ease_mm_title_remove);
