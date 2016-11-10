@@ -9,13 +9,13 @@ public class RegisterActivity$$ViewInjector {
     View view;
     view = finder.findRequiredView(source, 2131624203, "field 'userNameEditText'");
     target.userNameEditText = (android.widget.EditText) view;
-    view = finder.findRequiredView(source, 2131624236, "field 'userNickEditText'");
+    view = finder.findRequiredView(source, 2131624237, "field 'userNickEditText'");
     target.userNickEditText = (android.widget.EditText) view;
     view = finder.findRequiredView(source, 2131624207, "field 'passwordEditText'");
     target.passwordEditText = (android.widget.EditText) view;
-    view = finder.findRequiredView(source, 2131624239, "field 'confirmPwdEditText'");
+    view = finder.findRequiredView(source, 2131624240, "field 'confirmPwdEditText'");
     target.confirmPwdEditText = (android.widget.EditText) view;
-    view = finder.findRequiredView(source, 2131624233, "field 'registerLayoutBack' and method 'onClick'");
+    view = finder.findRequiredView(source, 2131624234, "field 'registerLayoutBack' and method 'onClick'");
     target.registerLayoutBack = (android.widget.LinearLayout) view;
     view.setOnClickListener(
       new android.view.View.OnClickListener() {
@@ -25,7 +25,7 @@ public class RegisterActivity$$ViewInjector {
           target.onClick(p0);
         }
       });
-    view = finder.findRequiredView(source, 2131624240, "field 'register' and method 'onClick'");
+    view = finder.findRequiredView(source, 2131624241, "field 'register' and method 'onClick'");
     target.register = (android.widget.Button) view;
     view.setOnClickListener(
       new android.view.View.OnClickListener() {

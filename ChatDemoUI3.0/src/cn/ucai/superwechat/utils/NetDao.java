@@ -102,4 +102,19 @@ public class NetDao {
                 .execute(listener);
     }
 
+    //创建群组
+    public static void createGroup(Context context, String hxid, String groupname, String description, String owner, boolean ispublic, boolean isinvites, File file, OkHttpUtils.OnCompleteListener<Result> listener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_CREATE_GROUP)
+                .addParam(I.Group.HX_ID, hxid)
+                .addParam(I.Group.NAME, groupname)
+                .addParam(I.Group.DESCRIPTION, description)
+                .addParam(I.Group.OWNER, owner)
+                .addParam(I.Group.IS_PUBLIC, ispublic + "")
+                .addParam(I.Group.ALLOW_INVITES, isinvites + "")
+                .addFile(file)
+                .post()
+                .targetClass(Result.class)
+                .execute(listener);
+    }
 }
