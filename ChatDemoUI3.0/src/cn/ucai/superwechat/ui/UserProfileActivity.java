@@ -267,7 +267,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
         NetDao.updatAvatar(this, user.getMUserName(), file, new OkHttpUtils.OnCompleteListener<Result>() {
             @Override
             public void onSuccess(Result result) {
-                Log.e("superwechat", result.toString());
                 if (result != null && result.isRetMsg()) {
                     String json = result.getRetData().toString();
                     Gson gson = new Gson();
@@ -337,8 +336,6 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
             dialog.dismiss();
             Toast.makeText(UserProfileActivity.this, getString(R.string.toast_updatephoto_success),
                     Toast.LENGTH_SHORT).show();
-
-
 //            uploadUserAvatar(Bitmap2Bytes(photo));
         }
 

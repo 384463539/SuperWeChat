@@ -1,4 +1,5 @@
 
+cn/ucai/superwechat/ui/NewGroupActivity$3.class
 com/huawei/android/pushagent/a/a.class
 com/bumptech/glide/GlideBuilder.class
 com/hyphenate/easeui/ui/EaseShowNormalFileActivity.class
@@ -183,6 +184,7 @@ com/parse/ParseUser.class
 com/huawei/android/pushagent/PushReceiver.class
 cn/ucai/superwechat/ui/RecorderVideoActivity$5.class
 com/hyphenate/easeui/ui/EaseShowBigImageActivity$1.class
+cn/ucai/superwechat/ui/NewGroupActivity$6.class
 org/apache/http/impl/client/TunnelRefusedException.class
 org/apache/http/HttpHost.class
 com/parse/Parse.class
@@ -501,6 +503,7 @@ com/easemob/redpacketsdk/RedPacket.class
 cn/ucai/superwechat/ui/GroupPickContactsActivity$1.class
 cn/ucai/superwechat/ui/NewFriendsMsgActivity.class
 com/hyphenate/easeui/widget/photoview/IPhotoView.class
+cn/ucai/superwechat/ui/NewGroupActivity$4.class
 com/easemob/redpacketui/ui/a/m.class
 cn/ucai/superwechat/ui/AddFriendActivity.class
 org/apache/http/message/BasicHttpResponse.class
@@ -668,6 +671,7 @@ butterknife/OnFocusChange.class
 cn/ucai/superwechat/ui/CallActivity$2$1.class
 com/huawei/android/pushagent/a/e.class
 android/support/v7/app/ActionBar$NavigationMode.class
+cn/ucai/superwechat/ui/NewGroupActivity$7.class
 org/apache/commons/codec/EncoderException.class
 org/apache/http/auth/AuthState.class
 com/xiaomi/mipush/sdk/g.class
@@ -1004,6 +1008,7 @@ butterknife/OnCheckedChanged.class
 cn/ucai/superwechat/ui/RobotsActivity$5.class
 org/apache/http/auth/UsernamePasswordCredentials.class
 cn/ucai/superwechat/ui/NewGroupActivity$1.class
+cn/ucai/superwechat/ui/NewGroupActivity$5.class
 cn/ucai/superwechat/ui/GroupPickContactsActivity$2.class
 com/bumptech/glide/DrawableRequestBuilder.class
 com/huawei/android/pushagent/c/a/a/e.class

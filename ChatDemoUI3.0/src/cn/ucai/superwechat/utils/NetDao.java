@@ -3,6 +3,7 @@ package cn.ucai.superwechat.utils;
 import android.content.Context;
 
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMGroup;
 
 import java.io.File;
 
@@ -103,18 +104,44 @@ public class NetDao {
     }
 
     //创建群组
-    public static void createGroup(Context context, String hxid, String groupname, String description, String owner, boolean ispublic, boolean isinvites, File file, OkHttpUtils.OnCompleteListener<Result> listener) {
+    public static void createGroup(Context context, EMGroup group, File file, OkHttpUtils.OnCompleteListener<Result> listener) {
         OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_CREATE_GROUP)
-                .addParam(I.Group.HX_ID, hxid)
-                .addParam(I.Group.NAME, groupname)
-                .addParam(I.Group.DESCRIPTION, description)
-                .addParam(I.Group.OWNER, owner)
-                .addParam(I.Group.IS_PUBLIC, ispublic + "")
-                .addParam(I.Group.ALLOW_INVITES, isinvites + "")
-                .addFile(file)
+                .addParam(I.Group.HX_ID, group.getGroupId())
+                .addParam(I.Group.NAME, group.getGroupName())
+                .addParam(I.Group.DESCRIPTION, group.getDescription())
+                .addParam(I.Group.OWNER, group.getOwner())
+                .addParam(I.Group.IS_PUBLIC, group.isPublic() + "")
+                .addParam(I.Group.ALLOW_INVITES, group.isAllowInvites() + "")
+                .addFile2(file)
+                .targetClass(Result.class)
+                .post()
+                .execute(listener);
+    }
+    //创建群组
+    public static void createGroup(Context context, EMGroup group,OkHttpUtils.OnCompleteListener<Result> listener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_CREATE_GROUP)
+                .addParam(I.Group.HX_ID, group.getGroupId())
+                .addParam(I.Group.NAME, group.getGroupName())
+                .addParam(I.Group.DESCRIPTION, group.getDescription())
+                .addParam(I.Group.OWNER, group.getOwner())
+                .addParam(I.Group.IS_PUBLIC, group.isPublic() + "")
+                .addParam(I.Group.ALLOW_INVITES, group.isAllowInvites() + "")
                 .post()
                 .targetClass(Result.class)
                 .execute(listener);
+    }
+
+    //更改群头像
+    public static void updatGroupAvatar(Context context, String name, File file, OkHttpUtils.OnCompleteListener<Result> listtener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_UPDATE_AVATAR)
+                .addParam(I.NAME_OR_HXID, name)
+                .addParam(I.AVATAR_TYPE, I.AVATAR_TYPE_GROUP_PATH)
+                .addFile2(file)
+                .targetClass(Result.class)
+                .post()
+                .execute(listtener);
     }
 }
