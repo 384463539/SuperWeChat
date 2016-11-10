@@ -1,6 +1,7 @@
 package cn.ucai.superwechat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
@@ -58,6 +59,7 @@ import com.hyphenate.easeui.model.EaseAtMessageHelper;
 import com.hyphenate.easeui.model.EaseNotifier;
 import com.hyphenate.easeui.model.EaseNotifier.EaseNotificationInfoProvider;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
+import com.hyphenate.easeui.utils.EaseUserUtils;
 import com.hyphenate.exceptions.HyphenateException;
 import com.hyphenate.util.EMLog;
 
@@ -68,6 +70,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.widget.Toast;
 
 public class SuPerWeChatHelper {
     /**
@@ -664,6 +667,7 @@ public class SuPerWeChatHelper {
                         broadcastManager.sendBroadcast(new Intent(Constant.ACTION_CONTACT_CHANAGED));
                     }
                 }
+
                 @Override
                 public void onError(String error) {
                 }
@@ -1115,9 +1119,38 @@ public class SuPerWeChatHelper {
         if (isSyncingContactsWithServer) {
             return;
         }
-
         isSyncingContactsWithServer = true;
+        NetDao.loadAppContact(context, new OkHttpUtils.OnCompleteListener<Result>() {
+            @Override
+            public void onSuccess(Result result) {
+                if (result != null && result.isRetMsg()) {
+                    String json = result.getRetData().toString();
+                    Gson gson = new Gson();
+                    UserBean[] uArr = gson.fromJson(json, UserBean[].class);
+                    Map<String, UserBean> userlist = new HashMap<String, UserBean>();
+                    for (UserBean user : uArr) {
+                        EaseCommonUtils.setAppUserInitialLetter(user);
+                        userlist.put(user.getMUserName(), user);
+                    }
+                    getAppcontactList().clear();
+                    getAppcontactList().putAll(userlist);
+                    L.i("1212212" + getAppcontactList().toString());
+                    // save the contact list to database
+                    UserDao dao = new UserDao(appContext);
+                    ArrayList<UserBean> users = new ArrayList<UserBean>(userlist.values());
+                    dao.saveAppContactList(users);
 
+                    broadcastManager.sendBroadcast(new Intent(Constant.ACTION_CONTACT_CHANAGED));
+                } else {
+                    Toast.makeText(context, "加载好友失败", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onError(String error) {
+                Toast.makeText(context, "加载好友失败", Toast.LENGTH_SHORT).show();
+            }
+        });
         new Thread() {
             @Override
             public void run() {
@@ -1145,7 +1178,6 @@ public class SuPerWeChatHelper {
                     UserDao dao = new UserDao(appContext);
                     List<EaseUser> users = new ArrayList<EaseUser>(userlist.values());
                     dao.saveContactList(users);
-
                     demoModel.setContactSynced(true);
                     EMLog.d(TAG, "set contact syn status to true");
 
@@ -1154,7 +1186,6 @@ public class SuPerWeChatHelper {
 
                     //notify sync success
                     notifyContactsSyncListener(true);
-
                     getUserProfileManager().asyncFetchContactInfosFromServer(usernames, new EMValueCallBack<List<EaseUser>>() {
 
                         @Override
@@ -1316,6 +1347,7 @@ public class SuPerWeChatHelper {
         appContactList.put(user.getMUserName(), user);
         demoModel.saveAppcontact(user);
     }
+
     public void deletAppcontact(String name) {
         appContactList.remove(name);
         demoModel.deletAppcontact(name);
@@ -1335,10 +1367,6 @@ public class SuPerWeChatHelper {
             L.i("为空赋空");
             return new Hashtable<String, UserBean>();
         }
-//        if (isLoggedIn() && appContactList.size()==0) {
-//            L.i("为空33");
-//            appContactList = demoModel.getAppContactList();
-//        }
         return appContactList;
     }
 
