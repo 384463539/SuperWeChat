@@ -6,6 +6,7 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMGroup;
 
 import java.io.File;
+import java.util.List;
 
 import cn.ucai.superwechat.Constant;
 import cn.ucai.superwechat.I;
@@ -118,8 +119,9 @@ public class NetDao {
                 .post()
                 .execute(listener);
     }
+
     //创建群组
-    public static void createGroup(Context context, EMGroup group,OkHttpUtils.OnCompleteListener<Result> listener) {
+    public static void createGroup(Context context, EMGroup group, OkHttpUtils.OnCompleteListener<Result> listener) {
         OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_CREATE_GROUP)
                 .addParam(I.Group.HX_ID, group.getGroupId())
@@ -144,4 +146,23 @@ public class NetDao {
                 .post()
                 .execute(listtener);
     }
+
+    public static void addMembers(Context context, EMGroup group, OkHttpUtils.OnCompleteListener<Result> listtener) {
+        List<String> members = group.getMembers();
+        String str = "";
+        for (String s : members) {
+            if (!s.equals(EMClient.getInstance().getCurrentUser())) {
+                str += s + ",";
+            }
+        }
+        str = str.substring(0, str.length() - 1);
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_ADD_GROUP_MEMBERS)
+                .addParam(I.Member.USER_NAME, str)
+                .addParam(I.Member.GROUP_HX_ID, group.getGroupId())
+                .targetClass(Result.class)
+                .execute(listtener);
+    }
+
+
 }

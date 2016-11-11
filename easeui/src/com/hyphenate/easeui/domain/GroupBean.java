@@ -169,7 +169,7 @@ public class GroupBean implements Serializable {
     }
 
     public String getMAvatarSuffix() {
-        return mavatarSuffix;
+        return mavatarSuffix==null?".png":mavatarSuffix;
     }
 
     public void setMAvatarSuffix(String mavatarSuffix) {
@@ -186,5 +186,8 @@ public class GroupBean implements Serializable {
                 + ", mgroupMaxUsers=" + mgroupMaxUsers + ", mgroupAffiliationsCount=" + mgroupAffiliationsCount
                 + ", mgroupIsPublic=" + mgroupIsPublic + ", mgroupAllowInvites=" + mgroupAllowInvites + "]";
     }
-
+    public static String getAvatar(String HXID) {
+        String path = "http://101.251.196.90:8000/SuperWeChatServerV2.0/downloadAvatar?name_or_hxid=" + HXID + "&avatarType=group_icon&m_avatar_suffix=.png";
+        return path;
+    }
 }

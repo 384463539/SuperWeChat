@@ -57,6 +57,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class NewGroupActivity extends BaseActivity {
     private static final int REQUESTCODE_PICK = 1;
@@ -64,7 +65,7 @@ public class NewGroupActivity extends BaseActivity {
     private static final int REQUESTCODE_CREAT = 3;
 
     private EditText groupNameEditText;
-//    private ProgressDialog progressDialog;
+    //    private ProgressDialog progressDialog;
     private EditText introductionEditText;
     private CheckBox publibCheckBox;
     private CheckBox memberCheckbox;
@@ -187,8 +188,6 @@ public class NewGroupActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-//        String st1 = getResources().getString(R.string.Is_to_create_a_group_chat);
-//        final String st2 = getResources().getString(R.string.Failed_to_create_groups);
         switch (requestCode) {
             case REQUESTCODE_PICK:
                 if (data == null || data.getData() == null) {
@@ -198,7 +197,6 @@ public class NewGroupActivity extends BaseActivity {
                 break;
             case REQUESTCODE_CUTTING:
                 if (data != null) {
-//                    updataUserAvatar(data);
                     setPicToView(data);
                 }
                 break;
@@ -210,45 +208,52 @@ public class NewGroupActivity extends BaseActivity {
         }
     }
 
-    public void creatAppGroup(EMGroup group) {
-        L.e("kkkk"+group.toString());
-        L.e("头像地址："+avatarFile);
-        if (avatarFile != null) {
-            NetDao.createGroup(context, group, avatarFile, new OkHttpUtils.OnCompleteListener<Result>() {
-                @Override
-                public void onSuccess(Result result) {
-                    L.e("nnnnn1111" + result.toString());
-                    if (result != null && result.isRetMsg()) {
-                        L.e("sssss111" + result.toString());
-                        creatGrouoSuccess();
-                        Toast.makeText(NewGroupActivity.this, "创建群组成功", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(NewGroupActivity.this, "创建群组失败", Toast.LENGTH_SHORT).show();
-                    }
+    //批量添加群成员
+    public void addMembers(EMGroup group) {
+        L.e("成员 ...." + group.getMembers().toString() + "ID:" + group.getGroupId());
+        NetDao.addMembers(context, group, new OkHttpUtils.OnCompleteListener<Result>() {
+            @Override
+            public void onSuccess(Result result) {
+                if (result != null && result.isRetMsg()) {
+                    creatGrouoSuccess();
+                    Toast.makeText(NewGroupActivity.this, "添加群成员，创建群组成功1", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(NewGroupActivity.this, "添加群成员，创建群组失败", Toast.LENGTH_SHORT).show();
                 }
-                @Override
-                public void onError(String error) {
-                    Toast.makeText(NewGroupActivity.this, "失败", Toast.LENGTH_SHORT).show();
-                }
-            });
-        } else {
-            NetDao.createGroup(context, group, new OkHttpUtils.OnCompleteListener<Result>() {
-                @Override
-                public void onSuccess(Result result) {
-                    L.e("nnnnn2222" + result.toString());
-                    if (result != null && result.isRetMsg()) {
-                        creatGrouoSuccess();
-                        Toast.makeText(NewGroupActivity.this, "创建群组成功", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(NewGroupActivity.this, "创建群组失败", Toast.LENGTH_SHORT).show();
-                    }
-                }
+            }
 
-                @Override
-                public void onError(String error) {
-                    Toast.makeText(NewGroupActivity.this, "失败", Toast.LENGTH_SHORT).show();
+            @Override
+            public void onError(String error) {
+                Toast.makeText(NewGroupActivity.this, "添加群成员，创建群组失败", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void creatAppGroup(final EMGroup group) {
+        OkHttpUtils.OnCompleteListener<Result> listener = new OkHttpUtils.OnCompleteListener<Result>() {
+            @Override
+            public void onSuccess(Result result) {
+                if (result != null && result.isRetMsg()) {
+                    if (group.getMembers().size() > 1) {
+                        addMembers(group);
+                    } else {
+                        creatGrouoSuccess();
+                        Toast.makeText(NewGroupActivity.this, "创建群组成功", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(NewGroupActivity.this, "创建群组失败", Toast.LENGTH_SHORT).show();
                 }
-            });
+            }
+
+            @Override
+            public void onError(String error) {
+                Toast.makeText(NewGroupActivity.this, "失败", Toast.LENGTH_SHORT).show();
+            }
+        };
+        if (avatarFile != null) {
+            NetDao.createGroup(context, group, avatarFile, listener);
+        } else {
+            NetDao.createGroup(context, group, listener);
         }
     }
 
