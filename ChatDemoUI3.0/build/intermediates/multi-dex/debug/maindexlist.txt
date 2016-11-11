@@ -247,6 +247,7 @@ android/support/v4/view/ViewCompat$JbMr1ViewCompatImpl.class
 org/apache/http/impl/conn/tsccm/AbstractConnPool.class
 android/support/annotation/RequiresPermission.class
 com/hyphenate/easeui/utils/EaseLoadLocalBigImgTask.class
+cn/ucai/superwechat/ui/GroupDetailsActivity$11.class
 cn/ucai/superwechat/video/util/Utils.class
 org/apache/http/impl/client/AbstractAuthenticationHandler.class
 android/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper.class
@@ -401,6 +402,7 @@ org/apache/http/impl/cookie/NetscapeDraftSpec.class
 com/easemob/redpacketsdk/bean/TokenData.class
 android/support/annotation/InterpolatorRes.class
 org/apache/http/impl/cookie/RFC2965DiscardAttributeHandler.class
+cn/ucai/superwechat/ui/GroupDetailsActivity$15.class
 com/alipay/sdk/app/i.class
 org/apache/http/impl/DefaultHttpClientConnection.class
 android/support/v4/content/WakefulBroadcastReceiver.class
@@ -573,6 +575,7 @@ com/huawei/android/microkernel/MKService.class
 com/hyphenate/chat/EMOptions.class
 com/baidu/location/LocationClient.class
 org/apache/http/io/SessionInputBuffer.class
+cn/ucai/superwechat/ui/GroupDetailsActivity$13.class
 com/alipay/sdk/app/b.class
 com/hyphenate/easeui/controller/EaseUI.class
 cn/ucai/superwechat/R.class
@@ -1066,6 +1069,7 @@ com/huawei/android/pushagent/PushReceiver$ReceiveType.class
 org/apache/http/impl/auth/UnsupportedDigestAlgorithmException.class
 org/apache/http/util/CharArrayBuffer.class
 cn/ucai/superwechat/utils/MD5.class
+cn/ucai/superwechat/ui/GroupDetailsActivity$12.class
 butterknife/OnPageChange.class
 cn/ucai/superwechat/ui/VideoCallActivity$2.class
 org/apache/http/impl/conn/LoggingSessionOutputBuffer.class
@@ -1254,6 +1258,7 @@ android/support/annotation/NonNull.class
 com/hyphenate/chat/EMContactManager.class
 com/alipay/sdk/app/h.class
 cn/ucai/superwechat/ui/GroupSearchMessageActivity$4.class
+cn/ucai/superwechat/ui/GroupDetailsActivity$14.class
 org/apache/http/impl/cookie/BestMatchSpec.class
 com/hyphenate/easeui/adapter/EaseContactAdapter.class
 com/hyphenate/easeui/ui/EaseShowVideoActivity$1.class

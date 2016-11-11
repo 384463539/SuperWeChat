@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="18dp"
-            android:layout_toRightOf="@id/avatar"
+            android:layout_toRightOf="@id/fg_avatar"
             android:textColor="#0F0F0F"
             android:textSize="16sp" />
     </RelativeLayout>

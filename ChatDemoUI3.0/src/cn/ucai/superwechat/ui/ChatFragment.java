@@ -22,6 +22,7 @@ import com.easemob.redpacketui.RedPacketConstant;
 import com.easemob.redpacketui.utils.RedPacketUtil;
 import com.easemob.redpacketui.widget.ChatRowRedPacket;
 import com.easemob.redpacketui.widget.ChatRowRedPacketAck;
+import com.google.gson.Gson;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMCmdMessageBody;
 import com.hyphenate.chat.EMGroup;
@@ -31,11 +32,15 @@ import com.hyphenate.chat.EMTextMessageBody;
 import cn.ucai.superwechat.Constant;
 import cn.ucai.superwechat.SuPerWeChatHelper;
 import cn.ucai.superwechat.R;
+import cn.ucai.superwechat.bean.Result;
 import cn.ucai.superwechat.domain.EmojiconExampleGroupData;
 import cn.ucai.superwechat.domain.RobotUser;
+import cn.ucai.superwechat.utils.NetDao;
+import cn.ucai.superwechat.utils.OkHttpUtils;
 import cn.ucai.superwechat.widget.ChatRowVoiceCall;
 
 import com.hyphenate.easeui.EaseConstant;
+import com.hyphenate.easeui.domain.UserBean;
 import com.hyphenate.easeui.ui.EaseChatFragment;
 import com.hyphenate.easeui.ui.EaseChatFragment.EaseChatFragmentHelper;
 import com.hyphenate.easeui.utils.EaseUserUtils;
@@ -266,9 +271,33 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragmentHe
             intent.putExtra("username", username);
             startActivity(intent);
         }else {
-            Intent intent = new Intent(getActivity(), FindFriendActivity.class);
-            intent.putExtra("userbean", EaseUserUtils.getUserInfo2(username));
-            startActivity(intent);
+            UserBean userBean = SuPerWeChatHelper.getInstance().getAppcontactList().get(username);
+            if (userBean==null){
+                NetDao.findUser(getActivity(), username, new OkHttpUtils.OnCompleteListener<Result>() {
+                    @Override
+                    public void onSuccess(Result result) {
+                        if (result!=null&&result.isRetMsg()){
+                            String json = result.getRetData().toString();
+                            Gson gson = new Gson();
+                            UserBean user = gson.fromJson(json,UserBean.class);
+                            Intent intent = new Intent(getActivity(), FindFriendActivity.class);
+                            intent.putExtra("userbean", user);
+                            startActivity(intent);
+                        }else {
+                            Toast.makeText(getActivity(), "未取得数据", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    @Override
+                    public void onError(String error) {
+                        Toast.makeText(getActivity(), "取得数据失败", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }else {
+                Intent intent = new Intent(getActivity(), FindFriendActivity.class);
+//                intent.putExtra("userbean", EaseUserUtils.getUserInfo2(username));
+                intent.putExtra("userbean", userBean);
+                startActivity(intent);
+            }
         }
     }
 

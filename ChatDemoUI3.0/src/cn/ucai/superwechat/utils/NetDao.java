@@ -147,6 +147,7 @@ public class NetDao {
                 .execute(listtener);
     }
 
+    //批量添加群成员
     public static void addMembers(Context context, EMGroup group, OkHttpUtils.OnCompleteListener<Result> listtener) {
         List<String> members = group.getMembers();
         String str = "";
@@ -163,6 +164,72 @@ public class NetDao {
                 .targetClass(Result.class)
                 .execute(listtener);
     }
+
+    //批量添加群成员
+    public static void addMembers(Context context, String[] members, String ID, OkHttpUtils.OnCompleteListener<Result> listtener) {
+        String str = "";
+        for (String s : members) {
+            if (!s.equals(EMClient.getInstance().getCurrentUser())) {
+                str += s + ",";
+            }
+        }
+        str = str.substring(0, str.length() - 1);
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_ADD_GROUP_MEMBERS)
+                .addParam(I.Member.USER_NAME, str)
+                .addParam(I.Member.GROUP_HX_ID, ID)
+                .targetClass(Result.class)
+                .execute(listtener);
+    }
+
+    //添加单个群成员
+    public static void addMember(Context context, String name, String HXid, OkHttpUtils.OnCompleteListener<Result> listtener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_ADD_GROUP_MEMBER)
+                .addParam(I.Member.USER_NAME, name)
+                .addParam(I.Member.GROUP_HX_ID, HXid)
+                .targetClass(Result.class)
+                .execute(listtener);
+    }
+
+    //删除单个群成员
+    public static void deletMember(Context context, String name, String Id, OkHttpUtils.OnCompleteListener<Result> listtener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_DELETE_GROUP_MEMBER)
+                .addParam(I.Member.USER_NAME, name)
+                .addParam(I.Member.GROUP_ID, Id)
+                .targetClass(Result.class)
+                .execute(listtener);
+    }
+
+    //更新群名称
+    public static void updateGroupName(Context context, String name, String Id, OkHttpUtils.OnCompleteListener<Result> listtener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_UPDATE_GROUP_NAME)
+                .addParam(I.Group.GROUP_ID, Id)
+                .addParam(I.Group.NAME, name)
+                .targetClass(Result.class)
+                .execute(listtener);
+    }
+
+
+    //查询群信息
+    public static void findGroupXX(Context context, String HXId, OkHttpUtils.OnCompleteListener<Result> listtener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_FIND_GROUP_BY_HXID)
+                .addParam(I.Group.HX_ID, HXId)
+                .targetClass(Result.class)
+                .execute(listtener);
+    }
+    //删除
+    public static void deleteGroup(Context context, String Id, OkHttpUtils.OnCompleteListener<Result> listtener) {
+        OkHttpUtils<Result> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_DELETE_GROUP)
+                .addParam(I.Group.GROUP_ID, Id)
+                .targetClass(Result.class)
+                .execute(listtener);
+    }
+
 
 
 }
