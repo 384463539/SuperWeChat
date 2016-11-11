@@ -216,7 +216,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                 case REQUEST_CODE_EXIT: // 退出群
                     progressDialog.setMessage(st2);
                     progressDialog.show();
-                    exitAppGroup();
+                    exitGrop();
                     break;
                 case REQUEST_CODE_EXIT_DELETE: // 解散群
                     progressDialog.setMessage(st3);
@@ -403,7 +403,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
             @Override
             public void onSuccess(Result result) {
                 if (result != null && result.isRetMsg()) {
-                    L.e("1212121"+result.toString());
+                    L.e("1212121" + result.toString());
                     deleteGrop();
                     Toast.makeText(GroupDetailsActivity.this, "删除群组成功", Toast.LENGTH_SHORT).show();
                 } else {
@@ -411,6 +411,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                     Toast.makeText(GroupDetailsActivity.this, "删除群组失败", Toast.LENGTH_SHORT).show();
                 }
             }
+
             @Override
             public void onError(String error) {
                 progressDialog.dismiss();
@@ -732,7 +733,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                                 return;
                             }
                             EMLog.d("group", "remove user from group:" + username);
-                            deleteAppMembersFromGroup(username);
+                            deleteMembersFromGroup(username);
                         } else {
                             // 正常情况下点击user，可以进入用户详情或者聊天页面等等
                             // startActivity(new
