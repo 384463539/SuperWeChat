@@ -3,17 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eee"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_top_bar"
         android:background="#181717"
-        android:gravity="center_vertical" >
-		
-        <include 
-            layout="@layout/ease_commom_back_btn"
-            />
+        android:gravity="center_vertical">
+
+        <include layout="@layout/ease_commom_back_btn" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,15 +31,15 @@
             android:visibility="visible" />
     </RelativeLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="8dp"
-        android:gravity="center_vertical" >
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
 
         <ImageView
-            android:id="@+id/avatar"
+            android:id="@+id/g_avatar"
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_alignParentLeft="true"
@@ -52,12 +50,11 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="7dp"
-            android:layout_toRightOf="@id/avatar"
+            android:layout_marginLeft="6dp"
+            android:text="111111"
             android:textColor="#0F0F0F"
             android:textSize="16sp" />
-    </RelativeLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/email_contanier"
@@ -67,13 +64,13 @@
         android:layout_marginRight="11dp"
         android:layout_marginTop="6dp"
         android:background="@drawable/em_button_bg"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/em_button_myprofile_selector"
-            android:gravity="center_vertical" >
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,7 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/em_button_myprofile_selector"
-            android:gravity="center_vertical" >
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -108,7 +105,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                 android:id="@+id/tv_introduction"
+                android:id="@+id/tv_introduction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -127,10 +124,10 @@
         android:layout_marginRight="11dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/em_btn_green_selector"
+        android:enabled="false"
+        android:onClick="addToGroup"
         android:padding="7dp"
         android:text="@string/To_join_the_chat"
-        android:onClick="addToGroup"
-        android:enabled="false"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 

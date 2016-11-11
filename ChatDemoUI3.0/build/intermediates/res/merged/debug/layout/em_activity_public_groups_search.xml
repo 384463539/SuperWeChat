@@ -57,7 +57,7 @@
         android:visibility="gone" >
 
         <ImageView
-            android:id="@+id/avatar"
+            android:id="@+id/fg_avatar"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_centerVertical="true"

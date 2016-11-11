@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +15,8 @@ import com.hyphenate.EMError;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMGroup;
 import cn.ucai.superwechat.R;
+
+import com.hyphenate.easeui.utils.EaseUserUtils;
 import com.hyphenate.exceptions.HyphenateException;
 
 public class PublicGroupsSeachActivity extends BaseActivity{
@@ -21,6 +24,7 @@ public class PublicGroupsSeachActivity extends BaseActivity{
     private EditText idET;
     private TextView nameText;
     public static EMGroup searchedGroup;
+    private ImageView ivAvatar;
 
     @Override
     protected void onCreate(Bundle arg0) {
@@ -30,7 +34,7 @@ public class PublicGroupsSeachActivity extends BaseActivity{
         containerLayout = (RelativeLayout) findViewById(R.id.rl_searched_group);
         idET = (EditText) findViewById(R.id.et_search_id);
         nameText = (TextView) findViewById(R.id.name);
-        
+        ivAvatar = (ImageView) findViewById(R.id.fg_avatar);
         searchedGroup = null;
     }
     
@@ -42,7 +46,9 @@ public class PublicGroupsSeachActivity extends BaseActivity{
         if(TextUtils.isEmpty(idET.getText())){
             return;
         }
-        
+        if (idET!=null){
+            EaseUserUtils.setGroupAvatar2(this,idET.getText().toString().trim(),ivAvatar);
+        }
         final ProgressDialog pd = new ProgressDialog(this);
         pd.setMessage(getResources().getString(R.string.searching));
         pd.setCancelable(false);

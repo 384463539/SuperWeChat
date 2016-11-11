@@ -187,7 +187,7 @@ public class GroupBean implements Serializable {
                 + ", mgroupIsPublic=" + mgroupIsPublic + ", mgroupAllowInvites=" + mgroupAllowInvites + "]";
     }
     public static String getAvatar(String HXID) {
-        String path = "http://101.251.196.90:8000/SuperWeChatServerV2.0/downloadAvatar?name_or_hxid=" + HXID + "&avatarType=group_icon&m_avatar_suffix=.png";
+        String path = "http://101.251.196.90:8000/SuperWeChatServerV2.0/downloadAvatar?name_or_hxid=" + HXID + "&avatarType=group_icon&m_avatar_suffix=.jpg";
         return path;
     }
 }
